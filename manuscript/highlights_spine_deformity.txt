@@ -3,4 +3,4 @@
 * Cross-species: humans uniquely sit at Bg ≈ 0.01, where passive support fails
 * Mechanosensors are 72% more elongated than metabolic regulators (p = 0.011)
 * Mechanosensors have ~70% fewer hinge regions per residue (p = 0.003)
-* Predicted Cobb-angle progression matches clinical cohorts (R² = 0.775, p < 1e-17)
+* Simulated Cobb response to tissue anisotropy (in-silico): R² = 0.775, p < 1e-17

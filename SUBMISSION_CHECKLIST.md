@@ -16,7 +16,7 @@
    - Abstract is 4 paragraphs (Background / Methods / Results / Conclusions) with bold labels
    - Figure 2b appears with caption "Mechanosensor proteins are interior-rigid"
    - No "Spacetime", "Lagrangian of the Growing Spine", "Vector-Scalar Mismatch", or "Thermodynamic Standing Wave" anywhere in body
-   - Cobb-angle correlation R²=0.775 in body matches abstract
+   - In-silico Cobb-angle vs anisotropy R²=0.775 in body matches abstract — verify "in-silico self-consistency" framing is preserved (this is NOT clinical validation)
    - No "?" placeholders for refs (would mean broken `\ref{}`)
 6. Download as `submission_manuscript_v1.1.pdf`
 7. Compile `cover_letter_spine_deformity.tex` separately → `cover_letter.pdf`
