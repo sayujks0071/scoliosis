@@ -1,0 +1,37 @@
+{
+  "title": "Active Geometric Maintenance of the Spinal S-Curve Against Gravity: An Information–Mechanical Coupling Model for Adolescent Idiopathic Scoliosis Onset",
+  "description": "Manuscript, reproducible analysis code, and datasets supporting an active-control framework for adolescent idiopathic scoliosis (AIS). Cross-species allometry (n=18 vertebrates), AlphaFold-derived structural metrics across a 61-gene panel, and a delay-differential model of postural control jointly explain why AIS clusters at peak height velocity, in the thoracic spine, and predominantly in girls. Includes the extended Bg-validation simulation sweep (1920 sims) covering humans through dolphins.",
+  "creators": [
+    {
+      "name": "Krishnan S, Sayuj",
+      "affiliation": "Yashoda Hospitals, Malakpet, Hyderabad, India",
+      "orcid": "0009-0009-5523-9979"
+    }
+  ],
+  "keywords": [
+    "adolescent idiopathic scoliosis",
+    "AIS",
+    "spine biomechanics",
+    "gravitational loading",
+    "Cosserat rod",
+    "AlphaFold",
+    "mechanosensors",
+    "postural control",
+    "allometric scaling",
+    "Bio-Gravitational Number"
+  ],
+  "license": "MIT",
+  "upload_type": "publication",
+  "publication_type": "article",
+  "access_right": "open",
+  "communities": [
+    {"identifier": "spine-biomechanics"}
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/sayujks0071/scoliosis",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
