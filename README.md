@@ -28,7 +28,7 @@ This repository contains the manuscript, reproducible analysis code, and dataset
 |---|---|---|
 | Cross-species scaling: humans uniquely operate at $B_g \approx 0.01$ where passive support fails | $B_g$-mass exponent $-0.282$, $R^2=0.744$, $p=1.3\times10^{-3}$ | Results §3.1 |
 | Per-species simulated countercurvature efficiency: bipeds vs quadrupeds | 60-fold $\eta_{CC}$ difference; MWU $p=0.044$, Kruskal-Wallis $p=0.037$ | Results §3.1 |
-| AlphaFold demand-vs-supply anisotropy gap (mechanosensors more elongated) | 72% gap; $p=0.011$, Cohen's $d=1.19$ (extended cohort: 80%, $p=0.0094$, $d=1.22$) | Results §3.4 |
+| AlphaFold extended-filament/channel mechanosensors more elongated than metabolic regulators (curated subset) | 72% gap; $p=0.011$, Cohen's $d=1.19$. Caveats: borderline-fragile to single supply-side gene removal (n=7); narrows when demand expanded to all mechano-tagged proteins (Results §3.4) | Results §3.4 |
 | AlphaFold hinge density: mechanosensors are interior-rigid | fold-difference $0.30$; $p=0.003$ ([Figure 2b](manuscript/figures/fig_hinge_density.pdf)) | Results §3.4 |
 | Derivative gain gap: proprioceptive lag closes control margin during growth | $r=0.983$, $p=2.7\times10^{-22}$ | Results §3.6 |
 | Simulated Cobb-angle response to tissue anisotropy (in-silico) | $R^2=0.775$, $p<10^{-17}$ — model self-consistency, not clinical validation | Results §3.7 |
