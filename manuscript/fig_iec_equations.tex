@@ -1,0 +1,34 @@
+% IEC Equations Diagram
+% Visual representation of the IEC coupling equations
+
+\begin{figure}[h!]
+\centering
+\begin{tikzpicture}[
+    node distance=1cm,
+    eqbox/.style={rectangle, draw, fill=blue!5, text width=8cm, minimum height=0.8cm, align=left},
+    arrow/.style={->, >=stealth, thick}
+]
+
+% Information Field
+\node[eqbox] (I) {$I(s)$: Information field (HOX/PAX, morphogens, neural signals)};
+
+% IEC Parameters
+\node[eqbox, below of=I] (params) {IEC Parameters: $\chi_{\kappa}$ (curvature), $\chi_{E}$ (stiffness), $\chi_{C}$ (cross-linking), $\chi_{M}$ (active moment)};
+
+% Equations
+\node[eqbox, below of=params, yshift=-0.5cm] (eq1) {$\kappa_{\mathrm{rest}}(s) = \kappa_{0}(s) + \chi_{\kappa} \frac{\partial I(s)}{\partial s}$};
+
+\node[eqbox, below of=eq1] (eq2) {$E_{\mathrm{eff}}(s) = E_{0} \left(1 + \chi_{E} I(s)\right)$};
+
+\node[eqbox, below of=eq2] (eq3) {$M_{\mathrm{info}}(s) = \chi_{M} I(s) \kappa_{\mathrm{gen}}(s)$};
+
+% Arrows
+\draw[arrow] (I) -- (params);
+\draw[arrow] (params) -- (eq1);
+\draw[arrow] (params) -- (eq2);
+\draw[arrow] (params) -- (eq3);
+
+\end{tikzpicture}
+\caption{The Information-Elasticity Coupling (IEC) framework. The information field $I(s)$, derived from genetic expression (e.g., HOX codes), modulates the material manifold through dimensionless coupling constants. $\chi_{\kappa}$ defines the local rest curvature (counter-curvature), $\chi_{E}$ tunes stiffness (morphomechanical hardening), and $\chi_{M}$ generates active moments, formally linking digital genetic information to analog tissue geometry.}
+\label{fig:iec_equations}
+\end{figure}

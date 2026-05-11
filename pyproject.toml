@@ -1,0 +1,99 @@
+[tool.poetry]
+name = "spinalmodes"
+version = "0.4.0"
+description = "Spinal counter-curvature and Information-Elasticity Coupling (IEC) model for biomechanical analysis"
+authors = ["Dr. Sayuj Krishnan <dr.sayujkrishnan@gmail.com>"]
+readme = "README.md"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering",
+]
+packages = [
+    {include = "spinalmodes", from = "src"},
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.24.0"
+scipy = ">=1.13.0,<1.18.0"
+matplotlib = "^3.7.0"
+typer = ">=0.9.0"
+pydantic = "^2.0.0"
+pandas = "^2.0.0"
+lifelines = ">=0.30.3,<0.31.0"
+biopython = "^1.85"
+pyelastica = "^0.3.3"
+paperbanana = "^0.1.2"
+fastmcp = "^0.1.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = ">=8.2"
+pytest-cov = "^4.1.0"
+black = ">=24.8"
+ruff = ">=0.6"
+mypy = ">=1.11"
+build = "^1.2.2"
+mkdocs = "^1.5.0"
+mkdocs-material = "^9.2.0"
+
+[tool.poetry.group.manuscript.dependencies]
+transformers = "^4.37.0"
+torch = "^2.0.0"
+accelerate = "^0.25.0"
+langchain = "^0.1.0"
+chromadb = "^0.4.0"
+
+# [tool.poetry.extras]
+# dev = ["pytest>=8.2", "pytest-cov>=4.1", "ruff>=0.6", "black>=24.8", "mypy>=1.11", "lifelines>=0.27"]
+# cosserat = ["pyelastica>=0.0.7"]
+# docs = ["pandoc>=3.1"]
+
+[tool.poetry.scripts]
+spinalmodes = "spinalmodes.cli:app"
+spinalmodes-validate = "spinalmodes.cli:cmd_validate"
+spinalmodes-figures = "spinalmodes.cli:cmd_figures"
+spinalmodes-paper = "spinalmodes.cli:cmd_paper"
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+exclude = ["archive"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501", "N802", "N803", "N806", "N815", "E741"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+warn_unused_ignores = true
+disallow_untyped_defs = false # Legacy mypy.ini had this as True, but set false to avoid breaking build
+check_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests", "research/alphafold_countercurvature/tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+markers = [
+    "gpu: requires a CUDA-capable GPU; auto-skipped when CUDA is unavailable",
+]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["spinalmodes*"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

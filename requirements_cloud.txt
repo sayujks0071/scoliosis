@@ -1,0 +1,22 @@
+# Cloud GPU Requirements for Manuscript Editing
+# Optimized for Qwen2.5-32B on RunPod/Lambda/Vast.ai
+
+# Core ML dependencies
+transformers>=4.37.0
+torch>=2.0.0
+accelerate>=0.25.0
+bitsandbytes>=0.41.0  # For 8-bit quantization if needed
+
+# RAG dependencies
+langchain>=0.1.0
+langchain-community>=0.0.10
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+
+# Utilities
+tqdm
+pyyaml
+requests
+
+# Optional: vLLM for faster inference (if supported on GPU)
+# vllm>=0.2.0

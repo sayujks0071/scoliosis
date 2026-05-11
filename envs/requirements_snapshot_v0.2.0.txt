@@ -1,0 +1,44 @@
+# Requirements for IEC Model (pip installation)
+# 
+# Usage:
+#   pip install -r envs/requirements.txt
+#   python test_solver_upgrade.py  # Should pass all 4 tests
+#
+# For publication reproducibility, exact versions are pinned.
+# This environment has been tested with the BVP solver upgrade.
+#
+# Last updated: 2025-11-04
+# Compatible with: IEC model v0.2.0 (BVP solver upgrade)
+
+# Core scientific computing
+numpy==1.24.3
+scipy==1.11.2
+matplotlib==3.7.2
+pandas==2.0.3
+
+# Core application dependencies
+typer==0.9.0          # CLI framework
+pydantic==2.3.0       # Data validation and settings
+
+# Testing and development (optional, for full test suite)
+pytest==7.4.0
+pytest-cov==4.1.0
+
+# Code quality tools (optional)
+black==23.7.0
+ruff==0.0.285
+mypy==1.5.1
+
+# Optional: Sensitivity analysis (for future figure generation)
+SALib==1.4.7          # Sobol indices, Morris screening
+seaborn==0.12.2       # Enhanced visualization
+
+# Cosserat rod solver for countercurvature experiments
+pyelastica>=1.0.0    # PyElastica for 3D Cosserat rod simulations
+                     # Note: Required for countercurvature experiments; beam solver is fallback
+
+# Note: For minimal production/reproduction, install only core dependencies:
+#   pip install numpy==1.24.3 scipy==1.11.2 matplotlib==3.7.2 pandas==2.0.3 typer==0.9.0 pydantic==2.3.0
+
+
+

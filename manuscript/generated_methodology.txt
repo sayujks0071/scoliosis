@@ -1,0 +1,38 @@
+**Overall Layout:**
+
+The figure will follow a left-to-right flow, illustrating the progression from developmental information to its effect on spinal geometry. The figure will be divided into three main sections: "Developmental Information Field," "Information-Elasticity Coupling (IEC)," and "Spinal Geometry & Mechanics." Each section will be clearly labeled using a bold sans-serif font. A very light, desaturated pastel background (e.g., pale lavender or ice blue) will be used for the entire figure, providing a clean and technical feel.
+
+**Section 1: Developmental Information Field**
+
+*   **Component 1:** A rounded rectangle labeled "Developmental Information (I(s))" in bold sans-serif text. The box will have a soft sky blue fill and a slightly darker blue border. Inside the box, a plot will depict the coherence field I(s) as a function of spatial coordinate 's' (spine length). The plot will show a sample Gaussian curve, starting near 0, peaking around I_center, and then decreasing. The x-axis of the plot will be labeled "s (Spine Length)" in italicized serif font, and the y-axis will be labeled "I(s) (Information Field)" in italicized serif font.
+*   **Component 2:** Below the "Developmental Information (I(s))" box, a smaller rounded rectangle labeled "IEC Parameters" in bold sans-serif text. This box will have a light gray fill and a slightly darker gray border. Inside, example parameters like "I_amplitude", "I_center", "I_width", and "I_mode" will be listed in a regular sans-serif font. The text will be smaller, and the box is intended to show that the information field is tunable. Ensure that the parameters listed are visually distinct and clearly readable.
+*   **Connection:** A downward arrow (medium thickness, solid dark gray) will connect the "Developmental Information (I(s))" box to the "IEC Parameters" box, indicating that the information field is defined by these parameters.
+*   **Annotation:** A callout box (solid dark gray border, rounded corners) next to the "Developmental Information (I(s))" box will state: "Example: Hox Gene Expression Pattern" in a smaller, regular sans-serif font. Reposition this callout box for better clarity.
+
+**Section 2: Information-Elasticity Coupling (IEC)**
+
+*   **Component 1:** A large, rounded rectangle labeled "Information-Elasticity Coupling (IEC)" in bold sans-serif text. This section will have a very light peach background fill. A more visible dashed dark gray border will visually separate this logical stage.
+*   **Component 2:** Inside the "IEC" rounded rectangle, three smaller rounded rectangles will be arranged vertically. Each will have a very light gray fill and slightly darker gray border.
+    *   **Box 1:** Labeled "IEC-1: Target Curvature Bias (χ_κ)" in bold sans-serif text. It will contain the equation: "\(\kappa(s) = \kappa_{gen} + \chi_{\kappa} \partial_s I(s)\)" using LaTeX-style italicized serif font for variables. Increase the font size to improve readability.
+    *   **Box 2:** Labeled "IEC-2: Constitutive Bias (χ_E, χ_C)" in bold sans-serif text. It will contain the equations: "\(E(s) = E_0 (1 + \chi_E I(s))\)" and "\(C(s) = C_0 (1 + \chi_C I(s))\)" using LaTeX-style italicized serif font for variables. Increase the font size to improve readability.
+    *   **Box 3:** Labeled "IEC-3: Active Moment (χ_f)" in bold sans-serif text. It will contain the equation: "\(M_{act}(s) \propto \chi_f \nabla I(s)\)" using LaTeX-style italicized serif font for variables. Increase the font size to improve readability.
+    These three boxes will be arranged vertically, with a small amount of consistent spacing between them.
+*   **Connections:**
+    *   An arrow (medium thickness, solid dark gray) will originate from the "Developmental Information (I(s))" box in Section 1 and split into three arrows, each pointing to one of the IEC boxes (IEC-1, IEC-2, IEC-3) within the "IEC" rounded rectangle. These arrows indicate that the information field influences each coupling mechanism.
+    *   Short, curved arrows (thin, dashed light gray) will connect IEC-1, IEC-2, and IEC-3 boxes, indicating that they are interconnected and act together. Increase their thickness and contrast to improve visibility.
+*   **Annotation:** A small text label above the "IEC" rounded rectangle will say "Coupling Mechanisms" in a regular sans-serif font.
+
+**Section 3: Spinal Geometry & Mechanics**
+
+*   **Component 1:** A rounded rectangle labeled "Modified Mechanical Properties" in bold sans-serif text. The box will have a soft, light green fill and a slightly darker green border. Inside the box, three smaller rounded rectangles will be arranged vertically:
+    *   **Box 1:** Labeled "Target Curvature (κ(s))" in bold sans-serif text. It will contain a plot of a representative target curvature profile along the spine (s). The x-axis will be labeled "s (Spine Length)" in italicized serif font.
+    *   **Box 2:** Labeled "Effective Stiffness (E(s))" in bold sans-serif text. It will contain a plot of a representative stiffness profile along the spine (s). The x-axis will be labeled "s (Spine Length)" in italicized serif font.
+    *   **Box 3:** Labeled "Active Moment (M(s))" in bold sans-serif text. It will contain a plot of a representative active moment profile along the spine (s). The x-axis will be labeled "s (Spine Length)" in italicized serif font.
+*   **Component 2:** A larger, rounded rectangle labeled "Spinal Geometry & Mechanics" in bold sans-serif text. This section will have a light yellow background fill and a dashed dark gray border.
+*   **Component 3:** Inside the "Spinal Geometry & Mechanics" rounded rectangle, there will be two elements:
+    *   A simplified side-view illustration of a spine with an S-curve. Key points of curvature will be labeled as "Lordosis" and "Kyphosis" in a regular sans-serif font.
+    *   A small text box labeled "Equilibrium Solution" in bold sans-serif text. This box will contain the equation "\(EI(s) * (\kappa(s) - \kappa_{target}(s)) = M_{ext}(s) - M_{active}(s)\)" using LaTeX-style italicized serif font for variables. A label indicating that the equilibrium solution provides the stable spinal curvature should be added. Present the equation with more visual emphasis.
+*   **Connections:**
+    *   Three arrows (medium thickness, solid dark gray) will originate from the "IEC" rounded rectangle in Section 2. One arrow will point to "Target Curvature (κ(s))", another to "Effective Stiffness (E(s))", and the third to "Active Moment (M(s))" inside the "Modified Mechanical Properties" box.
+    *   An arrow (medium thickness, solid dark gray) will originate from the "Modified Mechanical Properties" box and point to the "Spinal Geometry & Mechanics" rounded rectangle, indicating that the modified properties determine the spinal shape.
+*   **Input/Output:** A downward arrow labeled "Gravity (g)" in regular sans-serif font will point towards the spine illustration within the "Spinal Geometry & Mechanics" rounded rectangle. Add an arrow from the 'Gravity (g)' label to the spine illustration to visually represent the force of gravity acting on the spine. A callout box (no fill, dark gray border, rounded corners) next to the spine illustration will state: "Output: Stable Spinal Curvature" in a regular sans-serif font.

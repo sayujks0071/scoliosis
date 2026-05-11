@@ -1,0 +1,12 @@
+# Ignore large data downloads
+data/raw/*
+data/processed/*.csv
+!data/processed/candidates.csv  # Keep the candidate list tracked if small
+!data/processed/protein_metrics.csv # Keep final metrics tracked if small
+!data/manifest.csv
+
+# Ignore python caches
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/

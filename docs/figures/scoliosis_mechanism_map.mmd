@@ -1,0 +1,329 @@
+graph TD
+    %% Subgraphs for Organization
+    subgraph Genetics [Genetic & Molecular Layer]
+        HOX[HOX Cluster<br/>HOXA10, HOXD11]
+        COL[COL2A1<br/>Collagen Type II]
+        PIEZO1[PIEZO1<br/>Scalar Stiffness]
+        PIEZO2[PIEZO2<br/>Vector Alignment]
+        CILIA[DNAH5/PKD1L1<br/>Cilia Motility]
+        LBX1[LBX1<br/>Transcription Factor]
+        ADGRG6[ADGRG6/GPR126<br/>Adhesion GPCR]
+        PTK7[PTK7<br/>Planar Cell Polarity]
+        YAP[YAP/TAZ<br/>Hippo Pathway]
+        PKD2L1[PKD2L1<br/>CSF-Contacting Neurons]
+        MMP[MMP1/MMP3<br/>Matrix Metalloproteinases]
+        URP[Urp1/2<br/>Urotensin Peptide]
+        UTS2R[UTS2R<br/>Urotensin Receptor]
+        GFAP[GFAP<br/>Glial Activation]
+        VIM[VIM<br/>Vimentin]
+        LAMIN[LAMIN<br/>Lamin A/C]
+        BMAL1[BMAL1/CLOCK<br/>Circadian Rhythm]
+        RUNX3[RUNX3/EGR3<br/>Proprioceptive Identity]
+        METTL3[METTL3<br/>m6A Methyltransferase]
+        ESR1[ESR1<br/>Estrogen Receptor Alpha]
+        AQP4[AQP4<br/>Aquaporin-4]
+        MELATONIN[MELATONIN<br/>Pineal Hormone]
+        MT2[MTNR1B<br/>Melatonin Receptor]
+        HIF1A[HIF1A<br/>Hypoxia Inducible Factor]
+        POC5[POC5<br/>Centriolar Splint]
+        DSTYK[DSTYK<br/>Kinase]
+        TFEB[TFEB<br/>Transcription Factor]
+        Beta_Catenin[Beta-Catenin<br/>Wnt Effector]
+        DPY19L1L[DPY19L1L<br/>C-mannosyltransferase]
+        IGF1R[IGF1R<br/>Insulin-like Growth Factor Receptor]
+        GHR[GHR<br/>Growth Hormone Receptor]
+        SOST[SOST<br/>Sclerostin]
+        FBN1[FBN1<br/>Fibrillin-1]
+        CCN[CCN1/2<br/>Matrix Protein]
+        PPARGC1A[PPARGC1A<br/>Mitochondrial Biogenesis]
+        KCNQ[KCNQ<br/>Potassium Channel]
+        GPX4[GPX4<br/>Antioxidant Defense]
+        CAV1[CAV1<br/>Caveolin-1]
+    end
+
+    subgraph Processes [Cellular & Developmental Processes]
+        Astrogliosis[Reactive Astrogliosis<br/>Neuroinflammation]
+        Region[Regionalization<br/>Segment Identity]
+        ECM_Assembly[ECM Assembly<br/>Fibrillogenesis]
+        Nucl_Shuttle[Nuclear Shuttling<br/>Transcriptional Switch]
+        Mech_Trans[Mechanotransduction<br/>Ca2+ Influx]
+        Sym_Break[Symmetry Breaking<br/>Nodal Flow]
+        CSF_Sensing[CSF Flow Sensing<br/>Reissner Fiber Signal]
+        Neur_Diff[Somatosensory<br/>Differentiation]
+        Muscle_Diff[Myogenic Differentiation<br/>Fiber Type Specification]
+        Disc_Maint[Disc Maintenance<br/>Annulus Fibrosis Fusion]
+        PCP_Sig[PCP Signaling<br/>Wnt Pathway]
+        Degradation[ECM Degradation<br/>Collagen Breakdown]
+        mtROS[mtROS<br/>Mitochondrial ROS]
+        Adipogenesis[Adipogenesis<br/>Fatty Infiltration]
+        Hydraulic_Congestion[IVD Swelling<br/>Hydraulic Congestion]
+        Immune_Infilt[Immune Infiltration<br/>Macrophage Entry]
+        Circadian_Entrain[Circadian Entrainment<br/>Loading Zeitgeber]
+        Proprio_Maint[Proprioceptive Maint.<br/>Sensory Survival]
+        H3K9me3[H3K9me3<br/>Heterochromatin Compaction]
+        VCL_Stasis[VCL Stasis<br/>Lymphatic Reflux]
+        Glymphatic_Stasis[Glymphatic Stasis<br/>Toxic Clearance Failure]
+        Vestibular_Input[Vestibular Input<br/>Graviception]
+        Gi_cAMP[Gi/cAMP Signaling<br/>Gain Suppression]
+        Ciliary_Tuning[Ciliary Tuning<br/>Antenna Gain]
+        Hypoxia[Hypoxia<br/>O2 Deficit]
+        Osteogenesis[Osteogenesis<br/>Bone Formation]
+        Ciliary_Splint[Ciliary Splint<br/>Antenna Stiffness]
+        Vacuole_Biogenesis[Vacuole Biogenesis<br/>Hydrostatic Inflation]
+        C_Mannosylation[C-Mannosylation<br/>Protein Folding]
+        Rapid_Growth[Rapid Growth<br/>Adolescent Spurt]
+        Energy_Deficit[Energy Deficit<br/>Metabolic Buckling]
+        mtBiogenesis[Mitochondrial Biogenesis<br/>Energy Supply]
+        Fibrosis[Fibrosis<br/>Scarring]
+        TGFB[TGF-Beta Signaling<br/>Sequestration Failure]
+        Osteocyte_Dendrite[Osteocyte Dendrites<br/>Network Formation]
+        Actin_Dynamics[Actin Cytoskeleton<br/>Strain Rearrangement]
+        VEGF_A[VEGF-A/PGE2<br/>Secretory Response]
+        Ferroptosis[Ferroptosis<br/>Iron Overload]
+        Membrane_Tension[Membrane Tension<br/>Buffering Reserve]
+    end
+
+    subgraph Tissue [Tissue Mechanics & Properties]
+        Rest_Kappa[Rest Curvature κ0<br/>Target Geometry]
+        Stiffness[Stiffness EI<br/>Material Quality]
+        Torsional_Stiffness[Torsional Stiffness GJ<br/>Rotational Rigidity]
+        Gain[Feedback Gain G_mech<br/>Adaptive Growth]
+        Torsion[Chiral Torsion ε<br/>Initial Twist]
+        Muscle_Tone[Proprioception &<br/>Muscle Tone Balance]
+        Anisotropy[Tissue Anisotropy<br/>Directional Order]
+        TMD[Tissue Mineral Density<br/>Bone Quality]
+        Reissner_Fiber[Reissner Fiber<br/>Tension Reference]
+        Growth_Plate_Dysplasia[Growth Plate Dysplasia<br/>Asymmetric Ossification]
+    end
+
+    subgraph Outcome [Macroscopic Outcome]
+        S_Curve[S-Shaped Spine<br/>Counter-Curvature]
+        Stability[Mechanical Stability<br/>Buckling Resistance]
+        Scoliosis[Scoliosis<br/>System Failure]
+    end
+
+    %% Connections
+    HOX --> Region
+    Region --> Rest_Kappa
+    Rest_Kappa --> S_Curve
+
+    COL --> ECM_Assembly
+    ECM_Assembly --> Stiffness
+    Stiffness --> Stability
+
+    PIEZO1 --> Mech_Trans
+    PIEZO2 --> Mech_Trans
+    Mech_Trans --> Gain
+    Gain --> S_Curve
+
+    %% NEW ARC: Piezo Duality (Vector-Scalar Mismatch)
+    PIEZO1 --> ECM_Assembly
+    PIEZO2 --> Muscle_Tone
+
+    CILIA --> Sym_Break
+    Sym_Break --> Torsion
+    Torsion --> S_Curve
+
+    LBX1 --> Neur_Diff
+    LBX1 --> Muscle_Diff
+    Neur_Diff --> Proprio_Maint
+    Proprio_Maint --> Muscle_Tone
+    Muscle_Diff --> Muscle_Tone
+    Muscle_Tone --> Stability
+
+    %% NEW ARC: Proprioceptive Maintenance
+    RUNX3 --> Proprio_Maint
+
+    %% NEW ARC: ADGRG6
+    ADGRG6 --> Disc_Maint
+    Disc_Maint --> Stiffness
+
+    %% NEW ARC: PTK7
+    PTK7 --> PCP_Sig
+    PCP_Sig --> Anisotropy
+    Anisotropy --> Stability
+
+    %% NEW ARC: YAP/TAZ
+    YAP --> Nucl_Shuttle
+    Nucl_Shuttle --> ECM_Assembly
+    Mech_Trans --> Nucl_Shuttle
+
+    %% NEW ARC: Osteocyte Dendrite Cost Mechanism (Hu et al. 2025)
+    YAP --> CCN
+    CCN --> Osteocyte_Dendrite
+    Osteocyte_Dendrite --> Gain
+
+    %% NEW ARC: CSF/Reissner Fiber
+    CILIA --> CSF_Sensing
+    PKD2L1 --> CSF_Sensing
+    CSF_Sensing --> URP
+    URP --> UTS2R
+    UTS2R --> Muscle_Tone
+
+    %% NEW ARC: MMP Degradation
+    MMP --> Degradation
+    Degradation --> Stiffness
+
+    %% NEW ARC: Neuro-Inflammatory Pathway
+    CILIA --> Astrogliosis
+    GFAP --> Astrogliosis
+    Astrogliosis --> Muscle_Tone
+
+    %% NEW ARC: Vimentin Metabolic Switch
+    VIM --> mtROS
+    mtROS --> LAMIN
+    LAMIN --> Adipogenesis
+    Adipogenesis --> Muscle_Tone
+
+    %% NEW ARC: Inflamed Torsion
+    Hydraulic_Congestion --> Immune_Infilt
+    Immune_Infilt --> MMP
+    Degradation --> Torsional_Stiffness
+    Torsional_Stiffness --> Stability
+
+    %% NEW ARC: Glymphatic Stasis
+    AQP4 --> Glymphatic_Stasis
+    Glymphatic_Stasis --> Astrogliosis
+
+    %% NEW ARC: Glymphatic-MMP Axis (Chen et al., 2025)
+    Glymphatic_Stasis --> MMP
+
+    %% NEW ARC: Melatonin Gain Control
+    MELATONIN --> MT2
+    MT2 --> Gi_cAMP
+    Gi_cAMP --> Gain
+
+    %% NEW ARC: Vestibular Asymmetry
+    Vestibular_Input --> Muscle_Tone
+
+    %% Cross-Talk and Failures
+    Stability --> S_Curve
+    S_Curve -- "Loss of Control" --> Scoliosis
+    Stiffness -- "Too Low" --> Scoliosis
+    Torsional_Stiffness -- "Too Low" --> Scoliosis
+    Gain -- "Too Low" --> Scoliosis
+    Torsion -- "Randomized" --> Scoliosis
+    Muscle_Tone -- "Asymmetry" --> Scoliosis
+
+    %% Styling
+    classDef gene fill:#f9f,stroke:#333,stroke-width:2px;
+    classDef process fill:#bbf,stroke:#333,stroke-width:2px;
+    classDef tissue fill:#efe,stroke:#333,stroke-width:2px;
+    classDef outcome fill:#ffd,stroke:#333,stroke-width:4px;
+
+    %% NEW ARC: Spinal Jetlag
+    BMAL1 --> Circadian_Entrain
+    Mech_Trans --> Circadian_Entrain
+    Circadian_Entrain --> Disc_Maint
+
+    %% NEW ARC: Tunable Antenna (Miyoshi et al., 2024)
+    BMAL1 --> Ciliary_Tuning
+    Ciliary_Tuning --> Mech_Trans
+
+    %% NEW ARC: Epigenetic Asymmetry
+    mtROS --> METTL3
+    METTL3 --> ESR1
+    ESR1 --> Muscle_Tone
+
+    %% NEW ARC: Nuclear Stiffness (Scalar Senescence)
+    LAMIN --> H3K9me3
+    H3K9me3 --> Gain
+
+    %% NEW ARC: Lymphatic Drainage Pathway (VCL)
+    Muscle_Tone -- "Pump Failure" --> VCL_Stasis
+    VCL_Stasis --> Hydraulic_Congestion
+
+    %% NEW ARC: Hypoxic Clock Block (HIF1A)
+    Hydraulic_Congestion --> Hypoxia
+    Hypoxia --> HIF1A
+    HIF1A --> BMAL1
+
+    %% NEW ARC: Tension-Dependent Identity (HOX)
+    Mech_Trans --> HOX
+    HOX --> ECM_Assembly
+
+    %% NEW ARC: Bone Mineralization (Ramli et al., 2024)
+    %% PIEZO1 --> Osteogenesis (Replaced by BMSC Switch below)
+    Osteogenesis --> TMD
+    TMD --> Stiffness
+
+    %% NEW ARC: BMSC Fate Switch (Li et al., 2023)
+    PIEZO1 --> Beta_Catenin
+    Beta_Catenin --> Osteogenesis
+    Beta_Catenin -- "Inhibition" --> Adipogenesis
+
+    %% NEW ARC: Centriolar Splint (POC5)
+    POC5 --> Ciliary_Splint
+    Ciliary_Splint --> Gain
+
+    %% NEW ARC: Hydrostatic Skeleton (DSTYK/TFEB)
+    DSTYK --> TFEB
+    TFEB --> Vacuole_Biogenesis
+    Vacuole_Biogenesis --> Stiffness
+    Vacuole_Biogenesis --> Region
+
+    %% NEW ARC: Piezo-Cilia Stress Lock (Chen et al., 2025)
+    PIEZO1 -- "Stress Disassembly" --> Ciliary_Tuning
+    Ciliary_Tuning -- "Loss = Derepression" --> Osteogenesis
+
+    %% NEW ARC: Sweet String Pathway (DPY19L1L)
+    DPY19L1L --> C_Mannosylation
+    C_Mannosylation --> Reissner_Fiber
+    Reissner_Fiber --> CSF_Sensing
+
+    %% NEW ARC: Metabolic Buckling Pathway
+    IGF1R --> Rapid_Growth
+    GHR --> Rapid_Growth
+    Rapid_Growth -- "Scaling Mismatch" --> Energy_Deficit
+    Energy_Deficit -- "Crowding Out" --> PIEZO2
+    PPARGC1A --> mtBiogenesis
+    mtBiogenesis -- "Depletion (Bottleneck)" --> Energy_Deficit
+
+    %% NEW ARC: Piezo-Lymphatic Baroreflex
+    PIEZO1 --> VCL_Stasis
+
+    %% NEW ARC: Piezo-Fibrosis Brake (Rashidi et al., 2025)
+    PIEZO1 -- "Inhibition (Brake)" --> Fibrosis
+    Fibrosis --> Stiffness
+
+    %% NEW ARC: Sclerostin Brake (Vasiliadis 2021)
+    PIEZO1 -- "Inhibition (Brake)" --> SOST
+    SOST -- "Inhibition (Wnt)" --> Beta_Catenin
+
+    %% NEW ARC: PIEZO1-YAP Disc Degeneration Axis (Peng et al., 2025)
+    PIEZO1 -- "Ca2+/F-actin" --> YAP
+    YAP -- "Over-activation" --> MMP
+
+    %% NEW ARC: Fibrillin-TGFB Tether (Marfanoid Mechanism)
+    FBN1 -- "Sequestration Failure" --> TGFB
+    TGFB -- "Osteopenia" --> TMD
+    TGFB -- "Fibrosis" --> Fibrosis
+    TGFB -- "Stiffening" --> Stiffness
+
+    %% NEW ARC: Osteoblast Mechanotransduction Defect (Oliazadeh et al., 2022)
+    CILIA --> Actin_Dynamics
+    Actin_Dynamics -- "Impaired in AIS" --> VEGF_A
+    VEGF_A --> Gain
+
+    %% NEW ARC: Voltage Gain (Sánchez-Carranza et al., 2024)
+    KCNQ -- "Hyperpolarization" --> Mech_Trans
+
+    %% NEW ARC: PIEZO1-GPX4 Ferroptosis Axis (Chen et al., 2025)
+    PIEZO1 -- "Inhibition" --> GPX4
+    GPX4 -- "Loss of Defense" --> Ferroptosis
+    Ferroptosis --> Growth_Plate_Dysplasia
+    Growth_Plate_Dysplasia --> Stability
+
+    %% NEW ARC: Stochastic Resonance Mechanosensing
+    Muscle_Tone -- "Micro-Tremor Dither" --> PIEZO1
+    Muscle_Tone -- "Micro-Tremor Dither" --> PIEZO2
+
+
+    %% NEW ARC: Caveolin Gain Control (Moreno-Vicente et al. 2018)
+    CAV1 --> Membrane_Tension
+    Membrane_Tension --> YAP
+
+    class HOX,COL,PIEZO1,PIEZO2,CILIA,LBX1,ADGRG6,PTK7,YAP,PKD2L1,MMP,URP,UTS2R,GFAP,VIM,LAMIN,BMAL1,RUNX3,METTL3,ESR1,MELATONIN,MT2,HIF1A,POC5,DSTYK,TFEB,Beta_Catenin,DPY19L1L,IGF1R,GHR,SOST,FBN1,CCN,PPARGC1A,KCNQ,GPX4,CAV1 gene;
+    class Region,ECM_Assembly,Mech_Trans,Sym_Break,Neur_Diff,Muscle_Diff,Disc_Maint,PCP_Sig,Nucl_Shuttle,CSF_Sensing,Degradation,Astrogliosis,mtROS,Adipogenesis,Hydraulic_Congestion,Immune_Infilt,Circadian_Entrain,Proprio_Maint,H3K9me3,VCL_Stasis,Glymphatic_Stasis,Vestibular_Input,Gi_cAMP,Ciliary_Tuning,Hypoxia,Osteogenesis,Ciliary_Splint,Vacuole_Biogenesis,C_Mannosylation,Rapid_Growth,Energy_Deficit,mtBiogenesis,Fibrosis,TGFB,Osteocyte_Dendrite,Actin_Dynamics,VEGF_A,Ferroptosis,Membrane_Tension process;
+    class Rest_Kappa,Stiffness,Torsional_Stiffness,Gain,Torsion,Muscle_Tone,Anisotropy,TMD,Reissner_Fiber,Growth_Plate_Dysplasia tissue;
+    class S_Curve,Stability,Scoliosis outcome;

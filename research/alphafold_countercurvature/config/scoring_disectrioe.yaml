@@ -1,0 +1,17 @@
+# DISECTRIOE Scoring Rubric Weights
+# Weights (0-10 scale usually) for the discrete score components
+
+weights:
+  D: 2.0  # Developmental relevance (Axial/Spine)
+  I: 1.5  # In vivo evidence (Phenotype)
+  S: 1.0  # Structural availability (AlphaFold) - binary/quality
+  E: 1.0  # Expression in spine tissues
+  C: 1.5  # Curvature/mechanics plausibility
+  T: 1.0  # Tissue mechanical role
+  R: 0.5  # Regulatory centrality
+  I_iso: 0.5 # Isoform clarity
+  O: 0.5  # Ortholog coverage
+  E_exp: 0.5 # Experimental tractability
+
+thresholds:
+  min_score_to_fetch: 3.0  # Minimum total score to proceed to fetch stage (unless Seed/HOX/PAX)

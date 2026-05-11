@@ -1,0 +1,16 @@
+# Manual Curation Overrides
+# Use this file to set scores for I, E, C, T, R, I_iso, E_exp
+# D (Developmental) and S (Structural) and O (Ortholog) are automated/hinted.
+
+# Format:
+# GENE_SYMBOL:
+#   I: 2  # Strong in vivo evidence
+#   C: 1  # Plausible mechanical link
+#   notes: "Cited in Smith et al 2023 re: scoliosis"
+
+overrides:
+  # Example:
+  # PAX1:
+  #   I: 2
+  #   E: 2
+  #   notes: "Essential for vertebral body formation"

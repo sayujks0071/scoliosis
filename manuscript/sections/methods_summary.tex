@@ -1,0 +1,44 @@
+\section{Methods}
+
+\subsection{Computational Framework}
+
+We implemented the Information-Elasticity Coupling framework using two complementary approaches: (1) a fast deterministic beam model for parameter space exploration, and (2) full three-dimensional Cosserat rod simulations for capturing large deformations and nonlinear geometry.
+
+For 3D simulations, we used \texttt{PyElastica}~\cite{pyelastica_zenodo,gazzola2018forward}, an open-source Python implementation of Cosserat rod theory. The spine was modeled as a slender elastic rod ($n=50$--100 elements) with length $L=0.3$--0.5\,m, radius $r=0.01$\,m, Young's modulus $E_0=1$\,GPa, and density $\rho=1100$\,kg/m$^3$ (representative of vertebra-disc composite properties). Boundary conditions: clamped at base (sacrum), free at top (cranium), under uniform gravitational loading $\mathbf{g} = -9.81$\,m/s$^2$.
+
+\subsection{Information Field Specification}
+
+The developmental information field $I(s)$ encoding HOX-patterned positional identity was parameterized as a bimodal Gaussian:
+\begin{equation}
+I(s) = A_c \exp\left[-\frac{(s/L - s_c)^2}{2\sigma_c^2}\right] + A_l \exp\left[-\frac{(s/L - s_l)^2}{2\sigma_l^2}\right] + I_0,
+\label{eq:info_field}
+\end{equation}
+with peaks at normalized positions $s_c = 0.80$ (cervical) and $s_l = 0.25$ (lumbar), widths $\sigma_c = 0.08$ and $\sigma_l = 0.10$, amplitudes $A_c = 0.5$ and $A_l = 0.7$, and baseline $I_0 = 0.3$. This functional form reproduces the anatomic distribution of lordotic (high $I$) and kyphotic (low $I$) regions.
+
+For scoliosis simulations, a small lateral asymmetry was introduced: $I(s) \to I(s) + \varepsilon_{\mathrm{asym}} \exp[-(s/L - 0.6)^2/(2 \cdot 0.08^2)]$ with $\varepsilon_{\mathrm{asym}} = 0.01$--0.05 (1--5\% left-right variation, representing normal developmental noise).
+
+\subsection{Information-Elasticity Coupling Implementation}
+
+The information field couples to spine mechanics through three channels: (1) rest curvature modulation: $\bm{\kappa}^0(s) = \bm{\kappa}_{\mathrm{gen}} + \chi_\kappa \nabla I(s)$, (2) stiffness modulation: $B(s) = E_0 I_{\mathrm{area}} (1 + \chi_E I(s))$, and (3) active moment generation: $\mathbf{M}_{\mathrm{active}}(s) = \chi_M I'(s) \hat{\mathbf{n}}(s)$. Coupling constants $\chi_\kappa$, $\chi_E$, $\chi_M$ were systematically varied to explore the parameter space. We implemented custom callbacks in PyElastica to update local material properties and rest configurations based on $I(s)$ at each timestep.
+
+\subsection{Bio-Gravitational Number Calculation}
+
+For cross-species analysis, we computed $\mathcal{B}_g = EI/(MgL^2)$ using published allometric data for 18 vertebrate species spanning mouse to elephant. Spine length $L$, body mass $M$, and vertebral dimensions were obtained from comparative anatomy databases. Flexural stiffness $EI$ was estimated from vertebral cross-sectional geometry and published elastic moduli for bone-disc composites. Log-log regression was performed to extract scaling exponents with 95\% confidence intervals via bootstrap resampling (10,000 iterations).
+
+\subsection{Energy Deficit Window Quantification}
+
+Metabolic demand for counter-curvature maintenance was modeled as $D(L) \propto L^4$ (bending moment $\sim L^2$, correction effort $\sim L^2$). Nutrient supply capacity to avascular discs was modeled as $S(L) \propto L^2$ (diffusion-limited by endplate surface area)~\cite{urban2004nutrition}. The crossover point $L_{\mathrm{crit}}$ was determined by equating $D(L_{\mathrm{crit}}) = S(L_{\mathrm{crit}})$. Age correspondence was mapped using WHO pediatric spine growth charts.
+
+\subsection{Outcome Metrics}
+
+For each simulation, we computed: (1) \textbf{Geodesic deviation} $\widehat{D}_{\mathrm{geo}}$ quantifying departure from passive gravitational shape, (2) \textbf{Lateral scoliosis index} $S_{\mathrm{lat}} = \max|y|/L_{\mathrm{eff}}$ measuring coronal-plane asymmetry, (3) \textbf{Cobb angle} via linear fits to upper and lower spine segments (standard clinical measure), and (4) \textbf{Lordosis/kyphosis angles} from sagittal curvature profiles, compared against clinical norms (cervical lordosis 40--60°, thoracic kyphosis 20--45°, lumbar lordosis 40--60°)~\cite{white_panjabi_spine}.
+
+\subsection{AlphaFold Protein Structural Analysis}
+
+We retrieved AlphaFold v6 predicted structures for 23 mechanotransduction and metabolic regulator proteins from the AlphaFold Database. Structural anisotropy (ratio of principal moments of inertia) and disorder fraction (DSSP secondary structure analysis) were computed as proxies for maintenance cost. Statistical comparison between demand-side (mechanosensors: PIEZO1/2, Vimentin, Lamin A/C) and supply-side (metabolic regulators: SIRT1, PGC-1α, ARNTL) protein classes was performed via Mann-Whitney U test. This analysis is exploratory; AlphaFold limitations in predicting mechanical properties under load are acknowledged~\cite{gomes2022protein}.
+
+\subsection{Numerical Validation}
+
+Convergence was verified by varying element count ($n=10$--200); geodesic deviation converged to within 1\% for $n \geq 50$. The PyElastica implementation was validated against analytical Euler-Bernoulli beam solutions for small deflections (error $< 10^{-4}$) and standard buckling benchmarks. All source code is available in the \texttt{spinalmodes} Python package (see Data Availability).
+
+\textit{Detailed methods including steered molecular dynamics protocols, tissue homogenization calculations, and protein dynamics modeling are provided in Supplementary Methods Sections S5--S7.}

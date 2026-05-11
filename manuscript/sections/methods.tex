@@ -1,0 +1,62 @@
+\section{Methods}
+
+We implement the Information--Cosserat framework using two complementary numerical approaches: a fast deterministic beam model for parameter sweeps and eigenanalysis, and a full three-dimensional Cosserat rod simulation for capturing large deformations and geometric nonlinearities.
+
+\subsection{Deterministic IEC Beam Model}
+
+To explore the mode selection mechanism , we discretize the linearized beam equations using a finite difference scheme on a 1D domain $s \in [0, L]$. The rod is divided into $N=100$ segments. The information field $I(s)$ is mapped to local stiffness $E_i$ and rest curvature $\kappa_{i}$ at each node. We solve the resulting boundary value problem (BVP) using a standard shooting method (or sparse matrix solver for the eigenproblem). This allows rapid exploration of the $(\chi_\kappa, g)$ parameter space to identify regions where S-modes become the ground state.
+
+\subsection{3D Cosserat Rod Implementation (PyElastica)}
+
+For full 3D simulations, we utilize \texttt{PyElastica}~\cite{pyelastica_zenodo,gazzola2018forward}, an open-source Python implementation of Cosserat rod theory. Model parameters are listed in the Supplementary Information. The spine is modeled as a Cosserat rod with the following specifications:
+
+\begin{itemize}
+    \item \textbf{Discretization}: The rod is discretized into $n=50$--$100$ elements.
+    \item \textbf{Information Field}: For spinal simulations, $I(s)$ is specified as a bimodal Gaussian distribution representing HOX-patterned identity:
+    \begin{equation}
+    I(s) = A_c \exp\left[-\frac{(s/L - s_c)^2}{2\sigma_c^2}\right] + A_l \exp\left[-\frac{(s/L - s_l)^2}{2\sigma_l^2}\right] + I_0,
+    \label{eq:info_field_spinal}
+    \end{equation}
+    where $A_c = 0.5$, $s_c = 0.80$, $\sigma_c = 0.08$ (cervical lordosis), $A_l = 0.7$, $s_l = 0.25$, $\sigma_l = 0.10$ (lumbar lordosis), and $I_0 = 0.3$ (baseline). For scoliosis perturbations, a lateral asymmetry is added: $I(s) \to I(s) + \varepsilon_{\mathrm{asym}} \exp[-(s/L - 0.6)^2/(2 \cdot 0.08^2)]$ with $\varepsilon_{\mathrm{asym}} = 0.01$--$0.05$.
+    \item \textbf{IEC Coupling}: We implemented a custom callback in \texttt{PyElastica} that updates the local rest curvature vector $\bm{\kappa}^0(s)$ and bending stiffness matrix $\mathbf{B}(s)$ at each time step (or initialization) based on the information field $I(s)$.
+    \item \textbf{Boundary Conditions}: The rod is clamped at the base (sacrum) and free at the top (cranium), simulating a cantilever column under gravity. For specific validation cases, clamped-clamped conditions are used.
+    \item \textbf{Gravitational Loading}: Gravity is applied as a uniform body force $\mathbf{f} = \rho A \mathbf{g}$.
+    \item \textbf{Damping}: To find static equilibrium configurations, we apply external damping ($\nu \sim 0.1$--$1.0$ s$^{-1}$) and integrate the dynamic equations until the kinetic energy dissipates ($v_{\max} < 10^{-6}$ m/s).
+\end{itemize}
+
+The source code for the IEC-modified Cosserat solver is available in the \texttt{spinalmodes} Python package (see Data Availability).
+
+\subsection{Parameter Sweeps and Mode Classification}
+
+We perform systematic parameter sweeps over the coupling strength $\chi_\kappa$ (range $[0, 0.1]$) and gravitational acceleration $g$ (range $[0.01, 1.0]$ $g_{\mathrm{Earth}}$). For each simulation, we compute the equilibrium shape and evaluate the following metrics:
+1.  \textbf{Geodesic Deviation} $\widehat{D}_{\mathrm{geo}}$: Quantifies the difference between the realized shape and the gravity-only geodesic.
+2.  \textbf{Lateral Deviation} $S_{\mathrm{lat}}$: Measures symmetry breaking in the coronal plane.
+3.  \textbf{Cobb Angle}: Standard clinical measure for scoliotic curves.
+
+Regimes are classified based on the normalized geodesic deviation $\widehat{D}_{\mathrm{geo}}$. We define the \emph{gravity-dominated} regime ($\widehat{D}_{\mathrm{geo}} < 0.1$) as the region where gravitational potential energy dominates, leading to monotonic sag. The \emph{cooperative} regime ($0.1 \leq \widehat{D}_{\mathrm{geo}} \leq 0.3$) corresponds to the range where information and gravity balance to produce a stable, counter-curved S-shape. The \emph{information-dominated} regime ($\widehat{D}_{\mathrm{geo}} > 0.3$) is reached when information-driven metric distortions become the primary determinant of geometry, which, as we show, also coincides with the onset of symmetry-breaking instabilities (scoliosis-like modes). These thresholds were determined by analyzing the bifurcation of the lowest eigenvalue $\lambda_0$ and the emergence of non-monotonic curvature profiles.
+
+\subsection{Multi-Scale Protein Mechanics Pipeline}
+
+To ground the macroscopic parameters $\eta_p, \eta_a, \Gamma_m$ in molecular reality, we developed a multi-scale pipeline integrating AlphaFold predictions with structural energetics. \textit{Note: AlphaFold structures are used for hypothesis generation and qualitative geometric analysis only; experimental validation of protein mechanical properties via single-molecule force spectroscopy remains necessary for quantitative predictions.}
+\begin{enumerate}
+    \item \textbf{Structure Prediction:} We retrieved high-confidence structures for 23 key spinal proteins from the AlphaFold Protein Structure Database.
+    \item \textbf{Structural Metrics:} For each protein, we computed the \emph{Anisotropy Index} (ratio of principal moments of inertia) and \emph{Radius of Gyration} ($R_g$) using the `afcc` module. These metrics serve as proxies for the entropic cost of maintaining the protein's orientation against thermal noise.
+    \item \textbf{Energetic Mapping:} We defined the metabolic cost of maintenance $C_{maint} \propto \text{Anisotropy} \times N_{residues}$. This assumes that extended, anisotropic structures require more frequent chaperone intervention and cytoskeletal tension to prevent misfolding or aggregation compared to globular proteins.
+    \item \textbf{Steered Molecular Dynamics (SMD):} SMD simulations were executed in GROMACS using CHARMM36m and TIP3P water. We applied constant-velocity pulling to extract force-extension curves, enabling calculation of single-molecule stiffness $k_{molecule}$ from the low-strain linear regime.
+    \item \textbf{Fibril Assembly and Mechanics:} Fibrillar assemblies were coarse-grained with explicit D-band organization and cross-link density. Effective fibril moduli were computed incorporating collagen axial mechanics and proteoglycan osmotic compression terms.
+    \item \textbf{Tissue Homogenization:} Regional tissue elasticity tensors were computed using mixture theory: $\mathbf{C}_{tissue}(s) = \sum \phi_i(s) \mathbf{R}(\theta_i) \mathbf{C}_i \mathbf{R}(\theta_i)^T$, weighting constituent stiffness $\mathbf{C}_i$ by volume fractions $\phi_i$ from histology and orientation $\theta_i$ from polarized imaging.
+    \item \textbf{Validation:} We verified predicted molecular stiffness against AFM nanoindentation measurements and bulk mechanical tissue tests, achieving an $R^2 \approx 0.81$.
+\end{enumerate}
+
+\subsection{Protein Dynamics and Energy Modeling}
+
+We simulated the temporal competition between protein classes using a system of coupled differential equations (see Supplementary Information, Section~S7). The model tracks the energy pool $E(t)$ available for protein synthesis/maintenance over the 5--20 year age range.
+\begin{itemize}
+    \item \textbf{Supply:} Modeled as $S(t) = S_0 (L(t)/L_0)^2$, reflecting the diffusion-limited transport through the vertebral endplate surface area.
+    \item \textbf{Demand:} Modeled as $D(t) = D_{maint} (L/L_0) + D_{grav} (L/L_0)^4$, capturing the linear scaling of tissue volume maintenance and the quartic scaling of gravitational moment opposition.
+    \item \textbf{Dynamics:} The fidelity of the mechanosensory array $F(t)$ evolves according to $dF/dt = k_{repair}(S - D)$ when $S > D$, and $dF/dt = k_{damage}(S - D)$ when $S < D$ (deficit), bounded to $[0, 1]$.
+\end{itemize}
+
+\subsection{Numerical convergence and validation}
+
+A convergence study was performed by varying the number of elements $n$ from $10$ to $200$. We found that the normalized geodesic deviation $\widehat{D}_{\mathrm{geo}}$ converges to within 1\% for $n \geq 50$ (see Supplementary Fig.~S1). The numerical implementation was validated against analytical solutions for small-deflection Euler-Bernoulli beams. The \texttt{PyElastica} implementation was further verified by reproducing standard buckling and hanging chain benchmarks, with error metrics $||\mathbf{r}_{num} - \mathbf{r}_{ana}||/L < 10^{-4}$.

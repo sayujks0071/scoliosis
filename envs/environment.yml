@@ -1,0 +1,40 @@
+name: spinalmodes
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10.12
+  - numpy=1.24.3
+  - scipy=1.11.2
+  - matplotlib=3.7.2
+  - pandas=2.0.3
+  - pip=23.2.1
+  - pip:
+    # Core dependencies
+    - typer==0.9.0        # CLI framework
+    - pydantic==2.3.0     # Data validation
+    # Testing and development
+    - pytest==7.4.0
+    - pytest-cov==4.1.0
+    - black==23.7.0
+    - ruff==0.0.285
+    - mypy==1.5.1
+    # Optional: Sensitivity analysis (for future use)
+    - SALib==1.4.7        # Sobol, Morris screening
+    - seaborn==0.12.2     # Enhanced visualization
+
+# Environment specification for IEC Model reproducibility
+# 
+# Usage:
+#   conda env create -f envs/environment.yml
+#   conda activate spinalmodes
+#   python test_solver_upgrade.py  # Should pass all 4 tests
+#
+# For publication reproducibility, exact versions are pinned.
+# This environment has been tested with the BVP solver upgrade.
+#
+# Last updated: 2025-11-04
+# Compatible with: IEC model v0.2.0 (BVP solver upgrade)
+
+
+

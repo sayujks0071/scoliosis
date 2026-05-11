@@ -1,0 +1,5 @@
+- Scoliosis is a metabolic buckling event, not a primary bone disease.
+- Thermodynamic cost of spinal straightness scales as L^4, exceeding supply (L^2).
+- Energy deficit at L > 0.35m causes collapse of high-anisotropy sensors like Vimentin.
+- Vector-Scalar Mismatch drives 3D helical instability during rapid growth.
+- Metabolic rescue via mitochondrial support may prevent deformity progression.

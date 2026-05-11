@@ -1,0 +1,159 @@
+\section*{Tables}
+
+\begin{table}[h!]
+\centering
+\caption{Cross-species Bio-Gravitational Number $\mathcal{B}_g = EI/(MgL^2)$. Species with $\mathcal{B}_g < 0.1$ (shaded) require active metabolic maintenance of spinal geometry. Humans occupy the deepest position in the Allometric Trap.}
+\label{tab:cross_species}
+\small
+\begin{tabular}{lccccl}
+\toprule
+\textbf{Species} & \textbf{Mass (kg)} & \textbf{Length (m)} & \textbf{EI (Nm$^2$)} & \textbf{$\mathcal{B}_g$} & \textbf{Posture} \\
+\midrule
+Mouse & 0.03 & 0.05 & 0.00008 & 10.9 & Quadruped \\
+Rat & 0.3 & 0.15 & 0.002 & 3.02 & Quadruped \\
+Rabbit & 2.5 & 0.35 & 0.03 & 0.99 & Quadruped \\
+Cat & 4.0 & 0.45 & 0.06 & 0.76 & Quadruped \\
+Dog & 20.0 & 0.75 & 0.5 & 0.45 & Quadruped \\
+Chimpanzee & 50.0 & 0.5 & 1.6 & 0.65 & Facultative biped \\
+\rowcolor{yellow!15} Human (child) & 30.0 & 0.45 & 1.2 & 0.06 & Biped \\
+\rowcolor{yellow!15} Human (adult) & 70.0 & 0.6 & 2.5 & 0.01 & Biped \\
+Horse & 500.0 & 1.5 & 40.0 & 0.36 & Quadruped \\
+Elephant & 4000.0 & 2.5 & 550.0 & 0.22 & Quadruped \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Computational model parameters and biological justification}
+\label{tab:parameters}
+\small
+\begin{tabular}{llll}
+\toprule
+\textbf{Parameter} & \textbf{Value} & \textbf{Units} & \textbf{Biological Basis} \\
+\midrule
+\multicolumn{4}{l}{\textit{Geometry}} \\
+Length $L$ & 0.40 & m & Adult spine (sacrum to cranium) \\
+Diameter $d$ & 0.03 & m & Typical vertebral body dimension \\
+$n$ elements & 50--100 & -- & Convergence-tested discretization \\
+\midrule
+\multicolumn{4}{l}{\textit{Material Properties}} \\
+Young's modulus $E_0$ & 1.0 & GPa & Effective modulus (bone + disc) \\
+Area moment $I_{\mathrm{area}}$ & $1.0 \times 10^{-8}$ & m$^4$ & Cylindrical cross-section \\
+Density $\rho$ & 1100 & kg/m$^3$ & Tissue-averaged density \\
+Cross-section $A$ & $7.1 \times 10^{-4}$ & m$^2$ & $\pi (d/2)^2$ \\
+\midrule
+\multicolumn{4}{l}{\textit{IEC Coupling Parameters}} \\
+$\chi_\kappa$ & 0--0.10 & m$^{-1}$ & Rest curvature coupling (sweep) \\
+$\chi_E$ & 0.10 & -- & Stiffness modulation (fixed) \\
+$\chi_M$ & 0--0.05 & N$\cdot$m & Active moment coupling \\
+$\beta_1, \beta_2$ & 0.1, 0.05 & -- & Metric coupling constants \\
+\midrule
+\multicolumn{4}{l}{\textit{Information Field (Spinal Profile)}} \\
+Cervical peak & $s/L = 0.80$ & -- & C1-C7 region \\
+Lumbar peak & $s/L = 0.25$ & -- & L1-L5 region \\
+Peak amplitude & 0.5--0.7 & -- & Normalized HOX expression \\
+Baseline $I_0$ & 0.3 & -- & Background patterning \\
+\midrule
+\multicolumn{4}{l}{\textit{Loading \& Dynamics}} \\
+Gravity $g$ & 0.01--1.0 & $g_\oplus$ & Microgravity to Earth \\
+Damping $\nu$ & 0.1--1.0 & s$^{-1}$ & Numerical dissipation \\
+Equilibrium criterion & $v_{\max} < 10^{-6}$ & m/s & Kinetic energy threshold \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Thermodynamic cost proteins ($n=23$) classified as Demand (mechanosensory) or Supply (metabolic). Anisotropy values from AlphaFold Database v6. The exploratory gap between Demand and Supply anisotropy ($p = 0.011$, Mann--Whitney U; Cohen's $d = 1.19$) suggests a hypothesized molecular basis of the Energy Deficit Window. $^*$PIEZO2 v6 structure covers residues 1--709 of 2822; full-length anisotropy may differ.}
+\label{tab:thermodynamic_cost_proteins}
+\scriptsize
+\begin{tabular}{llccllc}
+\toprule
+\textbf{Gene} & \textbf{UniProt} & \textbf{Category} & \textbf{Anisotropy} & \textbf{Disorder \%} & \textbf{pLDDT} & \textbf{Residues} \\
+\midrule
+\multicolumn{7}{l}{\textit{Demand-Side: Mechanosensory and Cytoskeletal (mean anisotropy $3.08 \pm 1.44$)}} \\
+VIM & P08670 & Demand & 5.57 & 10.1 & 77.1 & 466 \\
+PTK7 & Q13308 & Demand & 5.28 & 15.2 & 74.3 & 1070 \\
+LMNA & P02545 & Demand & 4.71 & 12.4 & 76.4 & 664 \\
+DSTYK & Q6XUX3 & Demand & 3.65 & 18.7 & 70.2 & 929 \\
+PIEZO2$^*$ & Q9H5I5 & Demand & 3.45 & 8.3 & 79.4 & 709 \\
+PIEZO1 & Q92508 & Demand & 3.14 & 11.5 & 72.0 & 2521 \\
+CAV1 & Q03135 & Demand & 2.52 & 22.4 & 78.4 & 178 \\
+FLNA & P21333 & Demand & 2.50 & 9.8 & 76.5 & 2647 \\
+RUNX3 & Q13761 & Demand & 2.06 & 35.2 & 60.6 & 415 \\
+NTRK3 & Q16288 & Demand & 1.94 & 14.1 & 76.8 & 839 \\
+EGR3 & Q06889 & Demand & 1.56 & 64.1 & 50.0 & 387 \\
+LBX1 & P52954 & Demand & 1.36 & 42.3 & 66.9 & 281 \\
+\midrule
+\multicolumn{7}{l}{\textit{Supply-Side: Metabolic Regulators (mean anisotropy $1.79 \pm 0.56$)}} \\
+COL1A1 & P02452 & Supply & 2.80 & 48.6 & 52.7 & 1464 \\
+SHH & Q15465 & Supply & 2.12 & 18.4 & 78.4 & 462 \\
+SOX9 & P48436 & Supply & 2.19 & 44.0 & 56.0 & 509 \\
+CDKN1A & P38936 & Supply & 2.14 & 38.9 & 69.0 & 164 \\
+COMP & P49747 & Supply & 1.72 & 6.2 & 88.1 & 757 \\
+SIRT1 & Q96EB6 & Supply & 1.73 & 35.1 & 65.0 & 747 \\
+PPARGC1A & Q9UBK2 & Supply & 1.52 & 61.9 & 52.7 & 798 \\
+ARNTL & O00327 & Supply & 1.48 & 42.7 & 58.3 & 626 \\
+ACAN & P16112 & Supply & 1.35 & 28.4 & 71.2 & 2415 \\
+MMP3 & P08254 & Supply & 1.28 & 12.1 & 82.4 & 477 \\
+MMP1 & P03956 & Supply & 1.22 & 10.8 & 84.1 & 469 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Table of 16 thermodynamic cost proteins grouped by dissipation term ($\eta_p, \eta_a, \Gamma_m$) and characterized by AlphaFold structural metrics. The anisotropy ratio and morphology indicate the structural cost of maintaining orientation (vector sensing) vs. volume (scalar maintenance). The free energy dissipation functional is This table lists the 16 key proteins analyzed in this study, prioritizing high-confidence metabolic targets (Score 100) identified in the counter-curvature pipeline.}
+\label{tab:dissipation_proteins}
+\scriptsize
+\begin{tabular}{llcclll}
+\toprule
+\textbf{Gene} & \textbf{UniProt} & \textbf{Category} & \textbf{Anisotropy} & \textbf{Morphology} & \textbf{pLDDT} & \textbf{Scaling} \\
+\midrule
+\multicolumn{7}{l}{\textit{Proprioceptive Channel Anchors ($\eta_p$)}} \\
+PIEZO2 & Q9H5I5 & $\eta_{p}$ & 4.44 & Fibrous/Extended & 79.4 & $L$ \\
+PIEZO1 & Q92508 & $\eta_{p}$ & 3.90 & Fibrous/Extended & 72.0 & $L^2$ \\
+EGR3 & Q06889 & $\eta_{p}$ & 3.76 & Fibrous/Extended & 50.0 & $L$ \\
+RUNX3 & Q13761 & $\eta_{p}$ & 2.06 & Intermediate & 60.6 & $L$ \\
+\midrule
+\multicolumn{7}{l}{\textit{Active Maintenance Anchors ($\eta_a$)}} \\
+LMNA & P02545 & $\eta_{a}$ & 4.75 & Fibrous/Extended & 76.4 & $L^2$ \\
+FLNA & P21333 & $\eta_{a}$ & 2.50 & Intermediate & 76.5 & $L^3$ \\
+LBX1 & P52954 & $\eta_{a}$ & 2.27 & Intermediate & 66.9 & $L^2$ \\
+MYLK & Q15746 & $\eta_{a}$ & 1.46 & Globular & 65.8 & $L^2$ \\
+DMD & P11532 & $\eta_{a}$ & 1.32 & Globular & 76.3 & $L^3$ \\
+VIM & P08670 & $\eta_{a}$ & 7.47 & Fibrous/Extended & 77.1 & $L^3$ \\
+\midrule
+\multicolumn{7}{l}{\textit{Metabolic Supply Scaling ($\Gamma_m$)}} \\
+GHR & P10912 & $\Gamma_{m}$ & 5.13 & Fibrous/Extended & 58.7 & $L$ \\
+ARNTL & O00327 & $\Gamma_{m}$ & 3.32 & Fibrous/Extended & 65.5 & $L$ \\
+COL1A1 & P02452 & $\Gamma_{m}$ & 2.80 & Intermediate & 52.7 & $L^3$ \\
+PPARGC1A & Q9UBK2 & $\Gamma_{m}$ & 2.19 & Intermediate & 52.7 & $L$ \\
+SOX9 & P48436 & $\Gamma_{m}$ & 2.19 & Intermediate & 56.0 & $L$ \\
+IGF1R & P08069 & $\Gamma_{m}$ & 1.43 & Globular & 78.0 & $L$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{table}[h!]
+\centering
+\caption{Comprehensive Statistical Summary of the Information-Elasticity Coupling (IEC) Framework. All statistical tests were independently computed using \textit{scipy.stats} to validate core computational claims.}
+\label{tab:statistical_summary}
+\scriptsize
+\begin{tabular}{p{3.5cm}p{3cm}p{4cm}p{3.5cm}}
+\toprule
+\textbf{Mechanism / Hypothesis} & \textbf{Metric Evaluated} & \textbf{Statistical Result} & \textbf{Significance Level} \\
+\midrule
+\multicolumn{4}{l}{\textit{Cross-Species Scaling \& The Allometric Trap}} \\
+Allometric Scaling & $Bg$ vs. Body Mass & Exponent = $-0.282 \pm 0.072$ \newline $R^2 = 0.744$ \newline Deviation from $-0.25$: $0.032$ & $p = 1.31 \times 10^{-3}$ \newline (Strong) \\
+\midrule
+\multicolumn{4}{l}{\textit{Energy Deficit Window \& Scoliosis Onset}} \\
+Critical Transition ($L_{crit}$) & Spine Length vs. Cobb Angle & $r = 0.983$ \newline Deficit Ratio Max = $38.5$ & $p = 2.74 \times 10^{-22}$ \newline (Strong) \\
+Anisotropy Rescue Effect & $L_{crit}$ vs. Anisotropy & $R^2 = 0.775$ \newline Saturation at $\ge 6.0$ & $p = 3.58 \times 10^{-17}$ \newline (Strong) \\
+\midrule
+\multicolumn{4}{l}{\textit{Mechanical Instability \& Vector Mismatch}} \\
+Vector Misalignment & Peak Stiffness Mismatch & Position = $0.596$ (Normalized) \newline Reduction = $31.1\%$ & Matching Thoracolumbar Apex (Verified) \\
+Circadian Disruption (Jetlag) & Cobb Angle (Jetlag vs. Baseline) & $2.52$-fold increase \newline (Mean $24.18^\circ$ vs. $9.61^\circ$) & $p = 2.59 \times 10^{-4}$ \newline (Moderate) \\
+\bottomrule
+\end{tabular}
+\end{table}

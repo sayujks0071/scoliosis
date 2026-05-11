@@ -1,0 +1,4 @@
+protein,uniprot_id,plddt_avg,model_url,cif_url,length,confidence_high_frac
+HOXC8,P31273,64.12,https://alphafold.ebi.ac.uk/files/AF-P31273-F1-model_v6.pdb,https://alphafold.ebi.ac.uk/files/AF-P31273-F1-model_v6.cif,242,0.302
+HOXB13,Q92826,61.03,https://alphafold.ebi.ac.uk/files/AF-Q92826-F1-model_v6.pdb,https://alphafold.ebi.ac.uk/files/AF-Q92826-F1-model_v6.cif,284,0.236
+ADGRG6,Q86SQ4,74.19,https://alphafold.ebi.ac.uk/files/AF-Q86SQ4-2-F1-model_v6.pdb,https://alphafold.ebi.ac.uk/files/AF-Q86SQ4-2-F1-model_v6.cif,1193,0.7000000000000001

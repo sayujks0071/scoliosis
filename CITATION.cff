@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this software or results, please cite:"
+title: "Biological Countercurvature of Spacetime: An Information--Cosserat Framework for Spinal Geometry"
+version: 0.4.0
+authors:
+  - family-names: Krishnan S
+    given-names: Sayuj
+    affiliation: "Yashoda Hospitals, Malakpet, Hyderabad, India"
+    email: dr.sayujkrishnan@gmail.com
+    orcid: "https://orcid.org/0009-0009-5523-9979"
+license: MIT
+repository-code: "https://github.com/sayujks0071/scoliosis"
+abstract: "Spinal counter-curvature and Information-Elasticity Coupling (IEC) model for biomechanical analysis. This repository contains the manuscript, reproducible analysis code, and datasets supporting a theoretical framework that explains how developmental information shapes biological structures against gravity."
+keywords:
+  - "spinal geometry"
+  - "countercurvature"
+  - "information-elasticity coupling"
+  - "biomechanics"
+  - "cosserat rod"
+preferred-citation:
+  type: article
+  title: "Biological Countercurvature of Spacetime: An Information--Cosserat Framework for Spinal Geometry"
+  authors:
+    - family-names: Krishnan S
+      given-names: Sayuj
+  journal: "preprint"
+  year: 2025
+date-released: 2025-02-24

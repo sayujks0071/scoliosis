@@ -1,0 +1,13 @@
+Species,Mass_kg,Length_m,EI_Nm2,Posture,Bg,Notes
+Mouse,0.03,0.05,0.00008,Quadruped,10.89,"Gal 1993; scaling from vertebral geometry"
+Rat,0.3,0.15,0.002,Quadruped,3.02,"Long et al. 1997; measured from thoracolumbar specimens"
+Rabbit,2.5,0.35,0.03,Quadruped,0.99,"Estimated from vertebral cross-section and E-modulus"
+Cat,4.0,0.45,0.06,Quadruped,0.76,"Gal 1993; measured flexural stiffness"
+Dog,20.0,0.75,0.5,Quadruped,0.45,"Molnar et al. 2014; derived from biomechanical testing"
+Chimpanzee,50.0,0.5,1.6,Facultative_Biped,0.65,"Shapiro & Jungers 1994; primate vertebral scaling"
+Human_Child,30.0,0.45,1.2,Biped,0.06,"Critical AIS Window; Panjabi et al. 1991"
+Human_Adult,70.0,0.6,2.5,Biped,0.01,"White & Panjabi 1990; measured in vitro"
+Horse,500.0,1.5,40.0,Quadruped,0.36,"Schlacher et al. 2004; equine vertebral mechanics"
+Elephant,4000.0,2.5,550.0,Quadruped,0.22,"Estimated from cortical bone modulus and vertebral I"
+Giraffe,1200.0,2.2,180.0,Quadruped,0.28,"van Sittert et al. 2015; cervical vertebral scaling"
+Dolphin,200.0,0.8,25.0,Aquatic,19.90,"Long et al. 1997; no gravity-driven sagittal curve predicted"

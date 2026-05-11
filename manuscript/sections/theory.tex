@@ -1,0 +1,81 @@
+\section{Theory}
+
+\subsection{The Bio-Gravitational Number and the Allometric Trap}
+
+For a vertebral column of length $L$, flexural stiffness $EI$, mass $M$, and gravitational acceleration $g$, we define the \textbf{Bio-Gravitational Number}:
+\begin{equation}
+\mathcal{B}_g = \frac{EI}{M g L^2},
+\label{eq:bg_number_passive}
+\end{equation}
+a dimensionless ratio of passive flexural resistance to gravitational bending moment. When $\mathcal{B}_g > 0.1$, an organism can resist gravitational collapse through passive stiffness alone. When $\mathcal{B}_g < 0.1$, the organism enters the ``Allometric Trap'': it must actively maintain its shape at continuous metabolic cost. Cross-species analysis reveals that small quadrupeds operate well above this threshold, while humans ($\mathcal{B}_g \approx 0.01$) are deep within the trap, relying almost entirely on active metabolic maintenance to prevent spinal collapse~\cite{smit2020adolescent}. The Bio-Gravitational Number is analogous to the Froude number for locomotion, defining a fundamental physical boundary for spinal stability. However, scaling exponents vary systematically depending on physiological state~\cite{glazier2022variable}, and vertebral scaling exhibits size-dependent breakpoints~\cite{smith2024small}, emphasizing that bipedalism and human-specific axial loading uniquely exacerbate this vulnerability~\cite{gorman2009idiopathic}.
+
+The central problem of vertebrate morphogenesis is the translation of a one-dimensional genetic code into a robust three-dimensional geometry that can withstand environmental loads. Classical structural mechanics predicts that a flexible column clamped at the base and subjected to its own weight will buckle or sag into a monotonic C-shape~\cite{goriely2017mathematics}. Yet, the healthy human spine exhibits a complex, alternating S-shape (lordosis and kyphosis).
+
+This anomaly suggests that the S-shape is not a passive equilibrium but an active \emph{Counter-Curvature}---a geometric standing wave maintained by the continuous expenditure of metabolic energy against the gravitational field. This maintenance constitutes a biological implementation of \emph{optimal feedback control}~\cite{todorov2002optimal} and can be conceptually modeled using \emph{Latent Imagination}~\cite{hafner2019dreamer}, where the nervous system learns an internal world model of gravity and biomechanics to predict and optimize long-horizon postural behaviors by minimizing a cost function comprising both ``geometric error'' (deviation from the target shape) and ``metabolic effort'' (ATP consumption).
+
+\subsection{Delay Differential Equations (DDE) and the Derivative Gain Trap}
+
+The active maintenance of spinal alignment relies on proprioceptive feedback from paraspinal muscles and mechanosensors. However, neural conduction and central processing are not instantaneous. Established models of human postural control demonstrate that the upright state is stabilized by proportional-derivative (PD) or proportional-derivative-acceleration (PDA) feedback, subject to a time delay $\tau$~\cite{milton2009time, insperger2013acceleration}. We formalize the spine as an active control system governed by a Delay Differential Equation (DDE).
+
+The proprioceptive control law generating corrective force $F_{control}$ with feedback delay $\tau$ is:
+\begin{equation}
+\boldsymbol{\kappa}_{\mathrm{rest}}(s) = \boldsymbol{\kappa}_{\mathrm{gen}} + \chi_\kappa \nabla I(s).
+\label{eq:kappa_rest_field}
+\end{equation}
+where $K_P$ and $K_D$ are proportional and derivative gains, and the error is $e(s,t) = \kappa_{measured}(s,t) - \kappa_{target}$.
+
+Linearizing around the straight configuration, the dynamics of the spinal column become:
+\begin{equation}
+\rho A \frac{\partial^2 \kappa}{\partial t^2} + \eta \frac{\partial \kappa}{\partial t} + EI \frac{\partial^4 \kappa}{\partial s^4} + K_P \kappa(s, t-\tau) + K_D \frac{\partial \kappa}{\partial t}(s, t-\tau) = 0
+\label{eq:dde_spine}
+\end{equation}
+
+The stability of this active structure is governed by the dimensionless Bio-Gravitational Number $\mathcal{B}_g$:
+\begin{equation}
+\mathcal{B}_g = \frac{\chi_M \langle |\nabla I| \rangle}{\rho A g L^2}.
+\label{eq:bg_number_info}
+\end{equation}
+Crucially, when $\mathcal{B}_g > 1$, the biological system effectively dominates gravitational mechanics. At the molecular level, this coupling relies on the structural rigidity of patterning transcription factors; AlphaFold structural analysis of critical HOX proteins (e.g., HOXC8, UniProt P31273; HOXB13, UniProt Q92826) reveals conserved, high-confidence DNA-binding domains capable of enforcing the sharp spatial identity boundaries required by our field parameterization.
+
+During the adolescent growth spurt, the spine elongates rapidly. Because nerve conduction velocity in the extremities does not scale proportionately with rapid height increases~\cite{lang1985nerve, robinson2001nerve}, the absolute neural feedback delay $\tau$ increases significantly. We term this vulnerability the \textbf{Derivative Gain Trap}: derivative gains ($K_D$) that provide essential damping and stability during childhood become destabilizing as the delay $\tau$ crosses a critical threshold $\tau_c$.
+
+\subsection{Hopf Bifurcation and the Onset of Scoliosis}
+
+When the neural delay exceeds the critical threshold ($\tau > \tau_c$), the system undergoes a supercritical Hopf bifurcation~\cite{landry2005dynamics}. The previously stable upright equilibrium becomes unstable, and stable limit cycles (oscillations) emerge. In the context of the spine, these delay-induced oscillations manifest as continuous, micro-mechanical buckling events that asymmetric biomechanical loading then locks into a permanent scoliotic deformity.
+
+Assuming solutions of the form $\kappa(s,t) = A e^{\lambda t} \sin\left(\frac{n\pi s}{L}\right)$, the characteristic equation is:
+\begin{equation}
+\boldsymbol{\kappa}_{\mathrm{rest}}(s) = \boldsymbol{\kappa}_{\mathrm{gen}} + \chi_\kappa \nabla I(s),
+\label{eq:kappa_rest_iec}
+\end{equation}
+where $\chi_\kappa$ is a geometric coupling constant and $\boldsymbol{\kappa}_{\mathrm{gen}}$ is the baseline genetic curvature.
+
+\paragraph{Stiffness modulation (IEC-2).}
+The information field modulates the effective bending and torsional stiffness:
+\begin{equation}
+B_{\mathrm{eff}}(s) = E_0 I_{\mathrm{area}} (1 + \chi_E I(s)), \qquad
+C_{\mathrm{eff}}(s) = G_0 J (1 + \chi_C I(s)).
+\label{eq:stiffness_modulation}
+\end{equation}
+
+The total energy functional governing the rod's equilibrium is:
+\begin{equation}
+\mathcal{E}_{\mathrm{total}} = \int_0^L \left[ \frac{1}{2} B_{\mathrm{eff}}(\kappa - \kappa_{\mathrm{rest}})^2 + \frac{1}{2} C_{\mathrm{eff}} \tau^2 + \frac{1}{2} K_{\mathrm{eff}} \varepsilon^2 + \rho A \mathbf{r} \cdot \mathbf{g} \right] ds.
+\label{eq:iec_energy}
+\end{equation}
+
+For purely imaginary roots $\lambda = \pm i\omega$ (defining the bifurcation boundary), the system transitions from damped stability to active oscillation. This mathematical control theory precisely explains why Adolescent Idiopathic Scoliosis (AIS) uniquely coincides with the rapid adolescent growth spurt: it is the exact developmental window where increasing $\tau$ pushes the neuromotor control system across the Hopf bifurcation boundary.
+
+\subsection{The Energy Deficit Window: NAD+ and Proprioceptive Integrity}
+
+The biological spine is a dissipative structure requiring continuous metabolic expenditure to maintain its sensory and structural integrity. The metabolic power required to sustain this configuration scales superlinearly with length ($L^4$ demand vs $L^2$ surface-limited supply)~\cite{sato2025convective}.
+
+This scaling mismatch creates a transient \textbf{Energy Deficit Window} during the adolescent growth spurt. We propose that this metabolic deficit directly modulates the control parameters in the DDE model. Specifically, proprioceptive Ia/II afferents are among the largest and most metabolically demanding neurons.
+
+Recent evidence demonstrates that NAD+ depletion during development causes severe spinal deformities~\cite{basse2021nampt}, while oxidative stress directly drives scoliosis in animal models~\cite{pumputis2025oxidative}. Furthermore, NAD+ insufficiency activates the SARM1 pathway, which triggers local axon degeneration~\cite{gerdts2015sarm1}. We hypothesize that the adolescent Energy Deficit Window causes localized NAD+ insufficiency, which mildly compromises proprioceptive axon integrity. This subclinical neuropathy further increases the effective neural delay $\tau$, accelerating the transition across the Hopf bifurcation boundary and triggering scoliotic buckling.
+
+\subsection{Molecular Grounding: The AlphaFold Anisotropy Gap (Exploratory)}
+
+While the primary failure mode is governed by macroscopic delay dynamics, we also explore the molecular architecture of the mechanosensory apparatus. AlphaFold v6 structural analysis of 23 key spinal proteins reveals that demand-side mechanosensory proteins (e.g., Vimentin, PIEZO2) exhibit significantly higher structural anisotropy (mean $3.08 \pm 1.44$) than supply-side metabolic regulators (mean $1.79 \pm 0.56$).
+
+We tentatively propose a \textbf{Demand-Supply Anisotropy Gap} ($p = 0.011$ in our dataset): the proteins required to \emph{sense} mechanical geometry are structurally extended and thermodynamically expensive to maintain, while their metabolic regulators are compact and often intrinsically disordered. We emphasize that this observation is hypothesis-generating. Current AI structural prediction tools cannot directly infer mechanical properties under load~\cite{gomes2022protein, zonta2024sequence}, and confidence scores for extracellular matrix components are frequently low. Nonetheless, this structural asymmetry provides a compelling direction for future experimental validation of the cellular mechanisms underlying the Energy Deficit Window.

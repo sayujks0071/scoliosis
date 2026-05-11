@@ -1,0 +1,65 @@
+# Target Gene Seeds & Configuration
+
+# General Settings
+organism: "Homo sapiens"
+max_targets: 20  # Focused cycle
+include_controls: true
+n_controls: 1
+
+# Seed Lists
+# These genes are automatically scored with D=2 (Developmental Relevance)
+
+seeds:
+  Scoliosis_Drivers:
+    - LBX1
+    - PTK7
+    - POC5
+    - ADGRG6
+
+  Mechanosensors:
+    - PIEZO2
+
+  Segmentation:
+    - MESP2
+    - HES7
+
+  ECM:
+    - COL11A2
+
+  Week6_Expansion:
+    - SELENON
+    - EMD
+    - TTN
+    - STOML3
+    - AQP4
+    - SSPOP
+    - FAT4
+    - ROCK1
+    - DZIP1
+    - MYLK
+    - PANX3
+    - FBLN5
+    - GDF5
+    - CNNM2
+    - BNC2
+
+  Metabolic_Expansion:
+    - PPARGC1A
+    - IGF1R
+    - GHR
+    - ARNTL
+    - DMD
+    - MYLK
+
+  # Optional Expansion Sets
+  expansion_modules:
+    pass: []
+
+# Control Flags
+include_expansion:
+  segmentation: false
+  mechanotransduction: false
+
+# Control/Housekeeping genes (for contrast)
+controls:
+  - GAPDH

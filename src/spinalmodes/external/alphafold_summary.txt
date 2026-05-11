@@ -1,0 +1,18 @@
+AlphaFold Structural Support for Information Field
+==============================================
+
+Protein: HOXC8 (P31273)
+  - Avg pLDDT: 64.12
+  - Stable Regions: 30.2%
+  - Interpretation: High confidence domains provide binding specificity which anchors the IEC information field.
+
+Protein: HOXB13 (Q92826)
+  - Avg pLDDT: 61.03
+  - Stable Regions: 23.6%
+  - Interpretation: High confidence domains provide binding specificity which anchors the IEC information field.
+
+Protein: ADGRG6 (Q86SQ4)
+  - Avg pLDDT: 74.19
+  - Stable Regions: 70.0%
+  - Interpretation: High confidence domains provide binding specificity which anchors the IEC information field.
+

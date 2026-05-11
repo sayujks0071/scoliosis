@@ -1,0 +1,144 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------------------------------------------------------------------------
+% Basic packages
+% ---------------------------------------------------------------------------
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{lmodern}
+\usepackage{tikz}
+\graphicspath{{figures/}{../alphafold_figures/}}
+\usepackage{lineno}
+\graphicspath{{figures/}}
+
+% ---------------------------------------------------------------------------
+% Hyperref setup
+% ---------------------------------------------------------------------------
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue,
+    pdftitle={Biological Countercurvature of Spacetime: An Information--Cosserat Framework for Spinal Geometry},
+    pdfauthor={Dr. Sayuj Krishnan S},
+}
+
+% ---------------------------------------------------------------------------
+% Macros for recurring notation
+% ---------------------------------------------------------------------------
+% Fields and functions
+\newcommand{\Ifield}{I(s)}
+\newcommand{\Ifieldt}{I(s,t)}
+\newcommand{\gEff}{g_{\mathrm{eff}}}
+\newcommand{\Dgeo}{D_{\mathrm{geo}}}
+\newcommand{\Dgeohat}{\widehat{D}_{\mathrm{geo}}}
+\newcommand{\kappaPassive}{\kappa_{0}}
+\newcommand{\kappaInfo}{\kappa_{I}}
+\newcommand{\chiK}{\chi_{\kappa}}
+\newcommand{\chiE}{\chi_{E}}
+\newcommand{\chiC}{\chi_{C}}
+\newcommand{\chiM}{\chi_{M}}
+
+% Metric and line element
+\newcommand{\dlEff}{d\ell_{\mathrm{eff}}}
+\newcommand{\metricEff}{\dlEff^{2} = \gEff(s)\,ds^{2}}
+
+% Scoliosis metrics
+\newcommand{\Slat}{S_{\mathrm{lat}}}
+\newcommand{\Cobb}{\theta_{\mathrm{Cobb}}}
+
+% Nonlocal sliding (counterbend mechanics)
+\newcommand{\muSliding}{\mu}
+\newcommand{\gammaCompliance}{\gamma}
+
+% Information Theory notation
+\newcommand{\ShannonH}{\mathcal{H}}
+\newcommand{\KLDivergence}{D_{\mathrm{KL}}}
+\newcommand{\FisherInfo}{\mathcal{F}}
+\newcommand{\InstabilityR}{R(t)}
+
+% Misc
+\newcommand{\Reals}{\mathbb{R}}
+\newcommand{\dd}{\mathrm{d}}
+
+% ---------------------------------------------------------------------------
+% Mathematical Box environment Fallback
+% ---------------------------------------------------------------------------
+\newenvironment{mathbox}[1][]
+ {\par\vspace{\baselineskip}\noindent\textbf{#1}\par\noindent\rule{\textwidth}{0.4pt}\par\noindent}
+ {\par\noindent\rule{\textwidth}{0.4pt}\vspace{\baselineskip}\par}
+
+% ---------------------------------------------------------------------------
+% Title / Authors
+% ---------------------------------------------------------------------------
+\title{Biological Countercurvature of Spacetime: An Information--Cosserat Framework for Spinal Geometry}
+
+\author{Dr.~Sayuj Krishnan S, MBBS, DNB (Neurosurgery)\\
+Consultant Neurosurgeon and Spine Surgeon, Yashoda Hospitals, Malakpet, Hyderabad, India\\
+\texttt{dr.sayujkrishnan@gmail.com}
+}
+
+\date{\today}
+
+% ---------------------------------------------------------------------------
+% Document
+% ---------------------------------------------------------------------------
+\begin{document}
+\linenumbers
+\maketitle
+
+\input{sections/abstract}
+
+\vspace{0.5em}
+\noindent\textbf{Impact Statement:} We identify a universal scaling law governing the metabolic cost of maintaining body shape against gravity, explaining why human spines are uniquely vulnerable to scoliosis during adolescent growth and reclassifying a common disease as a predictable thermodynamic scaling failure.
+\vspace{0.5em}
+
+\begin{mathbox}[Model Summary: The Allometric Trap]
+\textbf{The Question:} What physical law governs how organisms maintain shape against gravity, and why does this maintenance fail during adolescent growth?\\[4pt]
+\textbf{The Scaling Law:} The Bio-Gravitational Number $\mathcal{B}_g = EI/(MgL^2)$ predicts that humans ($\mathcal{B}_g \approx 0.01$) cannot passively resist gravity and must actively maintain spinal geometry at metabolic cost.\\[4pt]
+\textbf{The Mechanism:}
+\begin{itemize}
+    \item \textbf{Metabolic Scaling Mismatch}: The cost of anti-gravitational form maintenance scales as $L^4$, while biological supply scales as $L^2$, creating a critical Energy Deficit Window at $L > 0.35$\,m.
+    \item \textbf{Molecular Asymmetry (Exploratory)}: Initial AlphaFold analysis suggests mechanosensory proteins may exhibit higher structural anisotropy than their metabolic regulators. We present this as a hypothesis-generating observation for future study, acknowledging current AI limitations in predicting mechanical properties.
+    \item \textbf{Scoliosis as Scaling Failure}: During adolescent growth, this deficit forces collapse from the active S-curve into a lower-energy scoliotic mode --- a predictable thermodynamic transition, not a random genetic error.
+\end{itemize}
+\end{mathbox}
+
+\input{sections/introduction}
+
+\input{sections/theory_summary}
+
+\input{sections/methods_summary}
+
+\input{sections/results}
+
+\input{sections/figures}
+
+\input{sections/discussion}
+
+\input{sections/conclusion}
+
+\input{sections/availability}
+
+\input{sections/statements}
+
+\input{sections/tables}
+
+
+
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+
+\input{sections/supplementary}
+
+\end{document}

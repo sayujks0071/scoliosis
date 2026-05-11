@@ -1,0 +1,36 @@
+\section{Theoretical Framework}
+
+\subsection{The Bio-Gravitational Number: A Stability Threshold}
+
+The central question is: under what physical conditions can an organism maintain its shape against gravity? We derive a dimensionless parameter, the \textbf{Bio-Gravitational Number}:
+\begin{equation}
+\mathcal{B}_g = \frac{EI}{M g L^2},
+\label{eq:bg_number}
+\end{equation}
+where $EI$ is spinal flexural stiffness, $M$ is body mass, $g$ is gravitational acceleration, and $L$ is spine length. This ratio compares passive structural resistance to gravitational bending load.
+
+Cross-species analysis reveals a critical threshold at $\mathcal{B}_g \approx 0.1$. Species above this value (most quadrupeds) can resist gravity passively through bone and disc stiffness alone. Humans occupy a unique position: adult $\mathcal{B}_g \approx 0.01$, placing us deep within the ``Allometric Trap'' where passive resistance fails and the normal spinal S-curve (cervical lordosis, thoracic kyphosis, lumbar lordosis) requires continuous metabolic maintenance via cellular strain sensors (PIEZO1/2, primary cilia) and proprioceptive feedback.
+
+\subsection{The Energy Deficit Window}
+
+During adolescent growth, two unfavorable scaling relationships collide. The metabolic cost of maintaining the S-curve against gravity scales approximately as $L^4$ (bending moment grows as $L^2$, curvature correction effort scales as $L^2$). Nutrient supply to avascular intervertebral discs, governed by diffusion and convective transport, scales more slowly as $L^{2}$ (surface area limited)~\cite{urban2004nutrition, sato2025convective}.
+
+These curves cross at a critical spine length $L_{\mathrm{crit}} \approx 0.35$\,m. For $L > L_{\mathrm{crit}}$, the system enters an \textbf{Energy Deficit Window} where metabolic demand exceeds supply capacity. At $L = 0.45$\,m (typical 15-year-old), the deficit reaches approximately 41\%. This age-length correspondence ($L_{\mathrm{crit}} \approx 0.35$\,m $\to$ ages 11--12) matches the well-known clinical peak incidence of Adolescent Idiopathic Scoliosis without parameter fitting to clinical data.
+
+\subsection{Information-Elasticity Coupling: HOX Genes to Geometry}
+
+The model formalizes how developmental patterning genes (particularly HOX genes encoding vertebral identity along the cranio-caudal axis) translate into mechanical geometry. We introduce an \textbf{Information Field} $I(s)$ representing the spatial concentration of HOX-encoded positional information along the spine (coordinate $s$). This field couples to spine mechanics through three channels (see Supplementary Theory for full derivation):
+
+\begin{enumerate}
+\item \textbf{Rest curvature modulation}: Information gradients specify target curvatures (lordotic at cervical/lumbar, kyphotic at thoracic).
+\item \textbf{Stiffness modulation}: Information modulates local bending and torsional stiffness via extracellular matrix composition.
+\item \textbf{Active moment generation}: Information gradients drive active muscular moments maintaining the S-curve.
+\end{enumerate}
+
+When the energy deficit exceeds a critical threshold, this active control system can no longer suppress small left-right asymmetries (inevitable developmental noise, typically $\sim 1$--5\%). These asymmetries, benign during childhood, are amplified into macroscopic scoliotic deformities (Cobb angles $> 15°$) during the deficit window.
+
+\subsection{Why Lateral (Coronal Plane) Buckling?}
+
+The spine is loaded primarily in the sagittal plane (forward-backward) by gravity. Why does deformity emerge laterally? The model predicts a \textbf{Vector Mismatch Mechanism}: information gradients (encoding the S-curve) are aligned with gravitational stress in the sagittal plane, providing maximal effective stiffness. Small lateral asymmetries create orthogonality between information and stress vectors, reducing effective lateral stiffness by up to 80\%. This creates a localized ``soft spot'' at the thoracolumbar junction (T8--T10, corresponding to steepest information gradient), directing instability into the coronal plane and explaining the anatomic localization of right thoracic AIS.
+
+\textit{Full mathematical derivations, stability analysis, and parameter sensitivity studies are provided in Supplementary Theory Sections S1--S4.}

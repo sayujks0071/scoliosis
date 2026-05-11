@@ -1,0 +1,25 @@
+Test_ID,Analysis,Test_Type,Statistic,Value,P_value,Effect_Size,CI_Lower,CI_Upper,N,Interpretation
+S1,Allometric Scaling (Bg vs Mass),Log-log linear regression,Slope,-0.282,1.31e-03,"R²=0.744, f²=2.91",-0.405,-0.170,10 species,Large effect; slope consistent with metabolic -0.25
+S2,Allometric Scaling Bootstrap,"BCa Bootstrap (10,000)",95% BCa CI,"[-0.405, -0.170]",N/A,N/A,-0.405,-0.170,"10,000 resamples",Metabolic prediction (-0.25) falls within CI
+S3,Allometric Scaling Permutation,"Permutation test (10,000)",p_perm,0.0014,0.0014,N/A,N/A,N/A,"10,000 permutations",Significant against null hypothesis
+S4,Slope vs Metabolic Prediction,One-sample t-test,t,0.549,0.603,N/A,N/A,N/A,df=8,NOT significantly different from -0.25
+S5,Bayesian Model Comparison,BIC comparison,Delta_BIC,11.34,N/A,BF≈290,N/A,N/A,2 models,Very strong evidence for IEC model
+S6,Leave-One-Out Cross-Validation,LOO-CV,R²_LOO,0.617,N/A,Overfitting index=0.127,N/A,N/A,10 folds,Robust generalization
+S7,Anisotropy Rescue,Linear regression,Slope,-0.085,3.58e-17,"R²=0.775, f²=3.44",N/A,N/A,51 points,Very large effect; saturation at anisotropy ≥6.0
+S8,Energy Deficit vs Cobb,Pearson correlation,r,0.983,2.74e-22,R²=0.966,N/A,N/A,30 L values,Near-perfect correlation
+S9,Logistic Bifurcation,Logistic regression,AUC,0.978,N/A,Accuracy=78.25%,N/A,N/A,400 points,Excellent classifier
+S10,High-chi Jetlag vs Entrained,Mann-Whitney U,Fold change,2.52,2.59e-04,Cohen's d=1.39,6.23,22.92,"n1=20, n2=10",Very large effect
+S11,Kruskal-Wallis (all conditions),Kruskal-Wallis H,H,48.66,<1e-06,N/A,N/A,N/A,8 conditions,Highly significant omnibus test
+S12,Post-hoc Pairwise (Bonferroni),Mann-Whitney + Bonferroni,Significant pairs,8,<0.05 corrected,N/A,N/A,N/A,28 comparisons,8 pairs survive correction
+S13,Vector Mismatch Peak,Spatial analysis,Position,0.596,N/A,31.1% stiffness loss,N/A,N/A,101 positions,Thoracolumbar junction (T11-T12)
+S14,Scoliosis Bifurcation Interaction,Multiple regression,R²_interaction,1.000,<1e-16,F_interaction=significant,N/A,N/A,75 observations,chi*epsilon interaction perfectly predicts Cobb
+S15,Bifurcation Deficit Fraction,Proportion,Fraction,0.782,N/A,N/A,N/A,N/A,313/400 in deficit,78.2% of parameter space in energy deficit
+S16,Human Child/Adult Bg Ratio,Ratio,Ratio,1.99,N/A,N/A,N/A,N/A,2 species,2× vulnerability in children
+S17,Microgravity Amplitude Decay,Curvature tracking,Decay,36.7%,N/A,0.50→0.316,N/A,N/A,300 points,Amplitude persists but decays
+S18,Protein Anisotropy vs pLDDT,Spearman,rho,-0.064,NS,N/A,N/A,N/A,22 proteins,No significant correlation
+S19,Protein Anisotropy vs Disorder,Spearman,rho,0.074,NS,N/A,N/A,N/A,22 proteins,No significant correlation
+S20,Protein Anisotropy vs Rg,Spearman,rho,0.380,0.081,N/A,N/A,N/A,22 proteins,Trend only (p=0.081)
+S21,Protein Sensitivity (High-conf only),Mann-Whitney,p_aniso,0.844,0.844,N/A,N/A,N/A,"11 high, 11 low",No bias from low-confidence proteins
+S22,Power Analysis (Clinical),Sample size calc,n_needed,35,N/A,"For r=0.46, α=0.05, power=0.80",N/A,N/A,N/A,35 patients needed for validation
+S23,Power Analysis (Allometric),Sample size calc,n_needed,8,N/A,"For r=0.863, α=0.05, power=0.80",N/A,N/A,Current n=10,Adequately powered
+S24,Clinical Age Mapping,Interpolation,Age at L_crit,8.5 years,N/A,Deficit begins; peak at 13 yrs,N/A,N/A,Growth chart data,Consistent with AIS onset (11-14 yrs)
