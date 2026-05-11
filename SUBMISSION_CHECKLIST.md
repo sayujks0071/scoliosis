@@ -1,14 +1,14 @@
 # Springer Spine Deformity submission checklist
 
-**Repo:** github.com/sayujks0071/scoliosis (tag `v1.1-clinical-reframe`, commit `b448198`)
+**Repo:** github.com/sayujks0071/scoliosis (tag `v1.3-fragility-transparent`)
 **Local manuscript source:** `~/life/manuscript/`
-**Overleaf bundle:** `~/life/manuscript_overleaf_v1.1.zip` (5.5 MB, generated 2026-05-11)
+**Overleaf bundle:** `~/life/manuscript_overleaf_v1.3.zip` (5.9 MB, current)
 **Editorial Manager:** https://www.editorialmanager.com/SPDE/
 
 ## Step 1 — Compile to PDF (Overleaf, 5 min)
 
 1. Sign into https://www.overleaf.com
-2. New Project → Upload Project → select `~/life/manuscript_overleaf_v1.1.zip`
+2. New Project → Upload Project → select `~/life/manuscript_overleaf_v1.3.zip`
 3. Set main document to `main.tex`
 4. Click "Recompile"
 5. Verify clean compilation:
