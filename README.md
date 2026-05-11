@@ -31,7 +31,7 @@ This repository contains the manuscript, reproducible analysis code, and dataset
 | AlphaFold demand-vs-supply anisotropy gap (mechanosensors more elongated) | 72% gap; $p=0.011$, Cohen's $d=1.19$ (extended cohort: 80%, $p=0.0094$, $d=1.22$) | Results §3.4 |
 | AlphaFold hinge density: mechanosensors are interior-rigid | fold-difference $0.30$; $p=0.003$ ([Figure 2b](manuscript/figures/fig_hinge_density.pdf)) | Results §3.4 |
 | Derivative gain gap: proprioceptive lag closes control margin during growth | $r=0.983$, $p=2.7\times10^{-22}$ | Results §3.6 |
-| Predicted Cobb-angle progression matches clinical cohort | $R^2=0.775$, $p<10^{-17}$ | Results §3.7 |
+| Simulated Cobb-angle response to tissue anisotropy (in-silico) | $R^2=0.775$, $p<10^{-17}$ — model self-consistency, not clinical validation | Results §3.7 |
 
 ---
 
