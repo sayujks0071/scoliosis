@@ -1,0 +1,68 @@
+% PROPOSED COVER LETTER for Springer Spine Deformity submission
+%
+% Differs from manuscript/cover_letter.tex (which is Nature-targeted) in:
+%   - Audience is pediatric spine surgeons + AIS clinical researchers
+%   - Foregrounds clinical relevance (brace timing, biomarkers, targets)
+%   - Acknowledges prior frameworks rather than implicitly displacing them
+%   - Reviewer suggestions specific to AIS/spine deformity field
+%   - No "Nature broad readership" framing
+%
+% Apply via:
+%   cp manuscript_drafts/cover_letter_spine_deformity.tex \
+%      ~/life/manuscript/cover_letter_spine_deformity.tex
+%   cd ~/life/manuscript && pdflatex cover_letter_spine_deformity.tex
+
+\documentclass[12pt]{letter}
+\usepackage[margin=1in]{geometry}
+\usepackage{times}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, urlcolor=blue}
+
+\signature{Sayuj Krishnan S., MBBS, DNB (Neurosurgery)\\Consultant Neurosurgeon and Spine Surgeon\\Yashoda Hospitals, Malakpet\\Hyderabad 500036, India\\dr.sayujkrishnan@gmail.com}
+
+\address{Sayuj Krishnan S.\\Department of Neurosurgery\\Yashoda Hospitals, Malakpet\\Hyderabad 500036, India}
+
+\begin{document}
+
+\begin{letter}{The Editor-in-Chief\\Spine Deformity\\Springer Nature}
+
+\opening{Dear Editor,}
+
+We submit our manuscript entitled \textbf{``Active Geometric Maintenance of the Spinal S-Curve Against Gravity: An Information--Mechanical Coupling Model for Adolescent Idiopathic Scoliosis Onset''} for consideration as an Original Article in \textit{Spine Deformity}.
+
+The clinical question motivating this work is one every pediatric spine surgeon faces: \textit{why does adolescent idiopathic scoliosis (AIS) cluster so tightly at peak height velocity, in the thoracic spine, and overwhelmingly in girls?} Existing explanatory frameworks --- neuromuscular asymmetry, genetic predisposition, Hueter--Volkmann asymmetric loading, melatonin-circadian dysregulation --- each illuminate parts of the picture but none unify the timing, anatomic localization, and sex predominance under a single quantitative mechanism. As a result, treatment remains empirical and we cannot predict, prior to curve onset, which adolescents will progress.
+
+We propose that the spine maintains its three-dimensional geometry against gravity through an active control system whose operating cost rises sharply during the growth spurt. The framework is presented in three independently-testable strands: (i) a cross-species allometric law showing that humans uniquely operate near the boundary at which passive bending stiffness no longer suffices to maintain the upright spine; (ii) AlphaFold-derived structural analysis of 23 candidate proteins (extended to 26 categorized proteins from a 61-gene panel) showing that mechanosensors are 72--80\% more structurally elongated than metabolic regulators ($p = 0.011$, Cohen's $d = 1.19$; $p = 0.0094$, $d = 1.22$ in extended cohort), with the additional finding that mechanosensors have $\sim 70$\% fewer hinge regions per residue ($p = 0.003$) --- a signature of cooperative load-sensing; and (iii) a delay-differential model of postural control showing that proprioceptive lag rises non-linearly during the growth spurt, with predicted control-energy cost matching the timing of AIS onset at $r = 0.983$, $p = 2.7 \times 10^{-22}$, and the simulated Cobb-angle prediction matching clinical cohort data at $R^2 = 0.775$, $p < 10^{-17}$.
+
+The work is framed as complementing rather than displacing existing models. We use the standard Cosserat-rod biomechanics formulation augmented with a developmental-information field, and we explicitly identify how genetic risk loci (PIEZO2, LBX1, POC5) and metabolic factors (NAD$^+$/SIRT1) enter as parameters of the same control-system equations.
+
+Three specific clinical implications, with falsifiable predictions, follow directly from the framework:
+
+\begin{enumerate}
+\item \textbf{Proprioceptive latency as a pre-clinical biomarker:} longitudinal somatosensory evoked potentials should rise non-linearly through the growth spurt in adolescents who later develop curves, distinguishing them prior to Cobb angle onset.
+\item \textbf{Metabolic rescue:} NAD$^+$ precursors (e.g., nicotinamide riboside) administered during peak height velocity should measurably slow curve progression in genetically susceptible adolescents.
+\item \textbf{Brace-timing rationale:} the predicted threshold structure of the control system suggests bracing efficacy depends sharply on intervention timing relative to the proprioceptive-delay margin --- offering a quantitative basis for the empirically observed efficacy window.
+\end{enumerate}
+
+All three predictions are testable in existing AIS cohorts without new instrumentation. Source code, data, and the full reproducibility package are publicly available at \url{https://github.com/sayujks0071/scoliosis} (release tag \texttt{v1.0-submission}).
+
+This manuscript has not been submitted elsewhere. The corresponding author has full clinical access to AIS patient cohorts at Yashoda Hospitals and welcomes collaboration with the journal's review process. We declare no competing interests; no external funding was received.
+
+We suggest the following potential reviewers with directly relevant expertise:
+
+\begin{itemize}
+\item \textbf{Prof.\ Stuart L.\ Weinstein} (University of Iowa) --- AIS natural history and bracing trials
+\item \textbf{Prof.\ Alain Moreau} (Universit\'{e} de Montr\'{e}al) --- AIS molecular biology, melatonin/POC5 axis
+\item \textbf{Prof.\ Carl-Eric Aubin} (Polytechnique Montr\'{e}al) --- spine biomechanics, Cosserat-rod modeling
+\item \textbf{Prof.\ Peter O.\ Newton} (Rady Children's Hospital, San Diego) --- pediatric spine surgery, Lenke classification
+\item \textbf{Prof.\ Tomohiko Kayano} (Saitama Medical University) --- LBX1 / AIS genetics
+\end{itemize}
+
+We believe the framework provides a quantitative scaffold around which the cumulative clinical, genetic, and biomechanical knowledge in our field can be organized --- and from which actionable, falsifiable predictions follow.
+
+Thank you for your consideration.
+
+\closing{Sincerely,}
+
+\end{letter}
+\end{document}
