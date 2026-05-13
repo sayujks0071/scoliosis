@@ -44,7 +44,7 @@ This repository contains the manuscript, reproducible analysis code, and dataset
 │   ├── sections/                           # Inputted sections (abstract, intro, theory_summary,
 │   │                                       #  methods_summary, results, figures, discussion, etc.)
 │   ├── figures/                            # All manuscript figures (PDF + PNG, ≥300 DPI)
-│   ├── references.bib                      # 232 validated bibliographic entries
+│   ├── references.bib                      # 53 references cited in the manuscript (full database retained for future revisions)
 │   ├── cover_letter_spine_deformity.tex    # Spine Deformity-targeted cover letter
 │   └── highlights_spine_deformity.txt      # 5-bullet clinical highlights
 │
@@ -111,7 +111,7 @@ cd ../.. && python scripts/correlation_01_v3_explicit_groups.py
 
 ```bash
 cd manuscript && make all
-# Or: upload manuscript_overleaf_v1.1.zip to Overleaf and click Recompile
+# Or: upload manuscript_overleaf_v1.4.zip to Overleaf and click Recompile
 ```
 
 Requires a local TeX toolchain (`pdflatex` + `bibtex`, or `latexmk`).
@@ -149,7 +149,7 @@ If you use this work, please cite:
   author  = {Krishnan, Sayuj},
   journal = {Spine Deformity (Springer)},
   year    = {2026},
-  note    = {Submitted; release tag: v1.1-clinical-reframe},
+  note    = {Submitted; release tag: v1.4-editorial},
   url     = {https://github.com/sayujks0071/scoliosis}
 }
 ```
@@ -161,8 +161,8 @@ A `CITATION.cff` file is included for tools that ingest Citation File Format. Af
 ## Submission status
 
 **Target journal:** Springer *Spine Deformity*
-**Submission tag:** [`v1.1-clinical-reframe`](https://github.com/sayujks0071/scoliosis/releases/tag/v1.1-clinical-reframe)
-**Manuscript bundle:** `manuscript_overleaf_v1.1.zip` (5.5 MB; upload to Overleaf for one-click compile)
+**Submission tag:** [`v1.4-editorial`](https://github.com/sayujks0071/scoliosis/releases/tag/v1.4-editorial)
+**Manuscript bundle:** `manuscript_overleaf_v1.4.zip` (upload to Overleaf for one-click compile)
 **Editorial Manager:** https://www.editorialmanager.com/SPDE/
 
 See [`SUBMISSION_CHECKLIST.md`](SUBMISSION_CHECKLIST.md) for the step-by-step submission workflow.

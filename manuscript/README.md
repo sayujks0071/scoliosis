@@ -1,80 +1,46 @@
-# Manuscript Structure Documentation
+# Manuscript
 
 ## Overview
-This directory contains the main manuscript "Biological Countercurvature of Spacetime: An Information--Cosserat Framework for Spinal Geometry" by Dr. Sayuj Krishnan S.
 
-## Main Files
+This directory contains the submission to *Spine Deformity* (Springer, Scoliosis Research Society):
 
-### main.tex
-The primary LaTeX document that orchestrates the entire manuscript. It includes:
-- Document class and package setup
-- Custom macros for mathematical notation
-- Title, author, and date information
-- All section inputs in proper order
+**Title:** Active Geometric Maintenance of the Spinal S-Curve Against Gravity: An Information–Mechanical Coupling Model for Adolescent Idiopathic Scoliosis Onset
 
-### references.bib
-Consolidated bibliography for the current manuscript and supplementary material. The references used by the included sections are collected here.
+**Corresponding author:** Dr. Sayuj Krishnan S, MBBS, DNB (Neurosurgery), Yashoda Hospitals Malakpet, Hyderabad, India.
 
-## Sections
+## Build
 
-The manuscript is organized into the following sections in `main.tex`:
+The single source of truth is `main.tex`. The Overleaf-ready bundle is `manuscript_overleaf_v1.4.zip` at the repository root (or in `~/life/` on the author's workstation).
 
-1. `abstract.tex` - Manuscript abstract
-2. `introduction.tex` - Introduction to biological countercurvature
-3. `theory.tex` - Theoretical framework and model derivations
-4. `methods.tex` - Computational methods and implementation
-5. `results.tex` - Numerical results and findings
-6. `figures.tex` - Figure captions and placements
-7. `discussion.tex` - Interpretation and context
-8. `conclusion.tex` - Summary and future directions
-9. `availability.tex` - Code and data availability statement
-10. `tables.tex` - Computational model parameters table
-11. `supplementary.tex` - Supplementary material
-
-## Building the Manuscript
-
-### Using Make
 ```bash
-# Full build with bibliography
-make all
-
-# Quick build without bibliography
-make quick
-
-# Clean auxiliary files
-make clean
-
-# Clean everything including PDF
-make cleanall
+cd manuscript
+make all          # local pdflatex + bibtex (requires a TeX installation)
+# Or upload manuscript_overleaf_v1.4.zip to Overleaf.
 ```
 
-### Manual Build
-```bash
-pdflatex main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
-```
+## Files
 
-## Citations
+| File | Role |
+|---|---|
+| `main.tex` | Main document; `\input`s the 12 section files in `sections/` |
+| `sections/abstract.tex` | Structured abstract (Background / Methods / Results / Conclusions) |
+| `sections/introduction.tex` | Clinical motivation (AIS epidemiology) |
+| `sections/theory_summary.tex` | Information–mechanical coupling overview |
+| `sections/methods_summary.tex` | Cross-species allometry, AlphaFold pipeline, delay-differential model |
+| `sections/results.tex` | All quantitative findings (model-internal) |
+| `sections/figures.tex` | Figure inclusion + captions |
+| `sections/discussion.tex` | Clinical interpretation + limits |
+| `sections/conclusion.tex` | Summary |
+| `sections/availability.tex` | Code and data availability statement |
+| `sections/statements.tex` | Ethics / Consent / Competing Interests / Funding / Author Contributions |
+| `sections/tables.tex` | All in-text tables |
+| `sections/supplementary.tex` | Supplementary methods, tables, and sensitivity analyses |
+| `cover_letter_spine_deformity.tex` | Cover letter for *Spine Deformity* submission |
+| `highlights_spine_deformity.txt` | 5-bullet clinical highlights for the submission form |
+| `references.bib` | Bibliographic database (53 entries cited in the manuscript; additional entries retained for future revisions) |
+| `figures/` | All manuscript figures (PDF + PNG, ≥300 DPI) |
+| `_archive/` | Earlier drafts and superseded files (not part of the current submission; preserved for revision history) |
 
-The current manuscript citations are present in the consolidated `references.bib` file.
+## Sections actually included in the compiled PDF
 
-## Figures and Graphics
-
-Figure files are expected in the `figures/` directory, with LaTeX also checking `../alphafold_figures/` where needed.
-
-## Version Notes
-
-## Quality Checks
-
-✅ All section files exist and are included from `main.tex`
-✅ The bibliography is consolidated for the current manuscript
-✅ The manuscript Makefile provides local build and clean targets
-✅ The main document structure is complete
-
-## Contact
-
-**Author:** Dr. Sayuj Krishnan S, MBBS, DNB (Neurosurgery)  
-**Email:** dr.sayujkrishnan@gmail.com  
-**Institution:** Yashoda Hospitals, Malakpet, Hyderabad, India
+`main.tex` inputs exactly: `abstract`, `introduction`, `theory_summary`, `methods_summary`, `results`, `figures`, `discussion`, `conclusion`, `availability`, `statements`, `tables`, `supplementary`. Files in `_archive/` are not compiled into the submission PDF.

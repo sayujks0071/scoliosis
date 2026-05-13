@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software or results, please cite:"
 title: "Active Geometric Maintenance of the Spinal S-Curve Against Gravity: An Information--Mechanical Coupling Model for Adolescent Idiopathic Scoliosis Onset"
-version: 1.3.0
+version: 1.4.0
 authors:
   - family-names: Krishnan S
     given-names: Sayuj
@@ -30,4 +30,4 @@ preferred-citation:
   journal: "Spine Deformity (Springer)"
   year: 2026
   status: submitted
-date-released: 2026-05-11
+date-released: 2026-05-13
