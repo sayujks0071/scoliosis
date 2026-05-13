@@ -3,4 +3,4 @@
 * Cross-species: humans uniquely sit at Bg ≈ 0.01, where passive support fails
 * Extended-filament/channel mechanosensors are 72% more elongated than metabolic regulators (p = 0.011, n = 23 curated subset)
 * Mechanosensors have ~70% fewer hinge regions per residue (p = 0.003)
-* Simulated Cobb response to tissue anisotropy (in-silico): R² = 0.775, p < 1e-17
+* Tissue anisotropy is protective against simulated curve onset: R² = 0.775, p < 1e-17 (anisotropy vs critical spine length L_crit, in-silico)
