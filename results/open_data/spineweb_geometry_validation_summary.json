@@ -1,0 +1,239 @@
+{
+  "dataset": "SpineWeb/AASCE 2019 curated landmark annotations",
+  "source": "https://zenodo.org/records/4413665",
+  "evidence_level": "landmark-only 2D geometry validation",
+  "primary_endpoint": "cobb_endplate_envelope_deg",
+  "n_cases_total": 609,
+  "n_train": 481,
+  "n_test": 128,
+  "n_usable": 534,
+  "n_complete_t1_l5": 606,
+  "n_usable_complete_t1_l5": 534,
+  "threshold_counts_usable": {
+    "cobb_ge_10": 529,
+    "cobb_ge_20": 478,
+    "cobb_ge_40": 275
+  },
+  "primary_endpoint_quantiles_usable": {
+    "0.05": 14.7237137955811,
+    "0.25": 29.175119349136757,
+    "0.5": 40.82362410553061,
+    "0.75": 53.87763736913024,
+    "0.95": 72.7078840172946
+  },
+  "metric_quantiles_usable": {
+    "max_chord_deviation_norm": {
+      "0.05": 0.021098895917679158,
+      "0.25": 0.04451641726068083,
+      "0.5": 0.07292650643472605,
+      "0.75": 0.11116380937252468,
+      "0.95": 0.1920621306254735
+    },
+    "lateral_span_norm": {
+      "0.05": 0.03362864295872954,
+      "0.25": 0.06731062186689422,
+      "0.5": 0.0984954841530539,
+      "0.75": 0.14268825866635773,
+      "0.95": 0.2357145947651047
+    },
+    "projected_rotation_total_deg": {
+      "0.05": 43.036384642679764,
+      "0.25": 72.72864628890524,
+      "0.5": 95.00473307896138,
+      "0.75": 122.1816265906564,
+      "0.95": 168.20413036585975
+    },
+    "projected_curvature_energy": {
+      "0.05": 0.06061300851454959,
+      "0.25": 0.16211947093793666,
+      "0.5": 0.2621663087288696,
+      "0.75": 0.43036440865545783,
+      "0.95": 0.8079260978280347
+    },
+    "tortuosity": {
+      "0.05": 1.0030192725126033,
+      "0.25": 1.0123449920179257,
+      "0.5": 1.0263387128984225,
+      "0.75": 1.0545532939707238,
+      "0.95": 1.1117328988565762
+    },
+    "centerline_cobb_like_deg": {
+      "0.05": 0.8738948280686708,
+      "0.25": 4.6552325493966205,
+      "0.5": 10.918564269460692,
+      "0.75": 18.517437961297855,
+      "0.95": 35.684818806016246
+    }
+  },
+  "correlations_vs_primary_endpoint": [
+    {
+      "metric": "tortuosity",
+      "n": 534,
+      "pearson_r": 0.9135037585207573,
+      "pearson_p": 6.10622191032073e-210,
+      "pearson_ci95": [
+        0.8982800358450564,
+        0.9265372264517444
+      ],
+      "spearman_rho": 0.9637575385277355,
+      "spearman_p": 1.853645484443044e-307,
+      "spearman_ci95_approx": [
+        0.9571807788115421,
+        0.9693399742121751
+      ]
+    },
+    {
+      "metric": "lateral_span_norm",
+      "n": 534,
+      "pearson_r": 0.903910915597171,
+      "pearson_p": 2.289671728183261e-198,
+      "pearson_ci95": [
+        0.8870984288336634,
+        0.9183281614184111
+      ],
+      "spearman_rho": 0.9082779146921672,
+      "spearman_p": 1.7746949372805244e-203,
+      "spearman_ci95_approx": [
+        0.8921862435738023,
+        0.9220667547077585
+      ]
+    },
+    {
+      "metric": "max_chord_deviation_norm",
+      "n": 534,
+      "pearson_r": 0.8872436782183568,
+      "pearson_p": 6.764561460360394e-181,
+      "pearson_ci95": [
+        0.8677175806835045,
+        0.9040356354138278
+      ],
+      "spearman_rho": 0.9014053267698485,
+      "spearman_p": 1.522518868913926e-195,
+      "spearman_ci95_approx": [
+        0.8841811114902909,
+        0.9161819617550451
+      ]
+    },
+    {
+      "metric": "projected_rotation_total_deg",
+      "n": 534,
+      "pearson_r": 0.8676778991381331,
+      "pearson_p": 1.3203732855026573e-163,
+      "pearson_ci95": [
+        0.8450417816143982,
+        0.8872095003098542
+      ],
+      "spearman_rho": 0.8960976673636396,
+      "spearman_p": 8.308104351274234e-190,
+      "spearman_ci95_approx": [
+        0.8780057100949763,
+        0.9116328054694789
+      ]
+    },
+    {
+      "metric": "projected_curvature_energy",
+      "n": 534,
+      "pearson_r": 0.6221653556364175,
+      "pearson_p": 1.552998411839434e-58,
+      "pearson_ci95": [
+        0.5672610425575221,
+        0.6715634258065937
+      ],
+      "spearman_rho": 0.8916840614379051,
+      "spearman_p": 2.872488846454417e-185,
+      "spearman_ci95_approx": [
+        0.8728751122585023,
+        0.9078470350769112
+      ]
+    },
+    {
+      "metric": "centerline_cobb_like_deg",
+      "n": 534,
+      "pearson_r": 0.3929639151646691,
+      "pearson_p": 3.657177024783952e-21,
+      "pearson_ci95": [
+        0.31874110411758394,
+        0.46239677855443984
+      ],
+      "spearman_rho": 0.3105195892870406,
+      "spearman_p": 2.1192712184992762e-13,
+      "spearman_ci95_approx": [
+        0.23177569154306343,
+        0.38522055293065277
+      ]
+    }
+  ],
+  "annotation_quality_summary_usable": {
+    "bad": {
+      "n": 113,
+      "cobb_median": 38.0852636870199,
+      "cobb_iqr": [
+        27.568442082409785,
+        52.958062519807214
+      ],
+      "max_chord_deviation_median": 0.0624557052117195,
+      "projected_rotation_median": 89.90705414427916
+    },
+    "good": {
+      "n": 363,
+      "cobb_median": 41.64629693467042,
+      "cobb_iqr": [
+        31.07148921936783,
+        55.44747070276501
+      ],
+      "max_chord_deviation_median": 0.0761153362590603,
+      "projected_rotation_median": 96.52563841318516
+    },
+    "medium": {
+      "n": 58,
+      "cobb_median": 37.7044156400827,
+      "cobb_iqr": [
+        27.841479725681427,
+        47.2479688631373
+      ],
+      "max_chord_deviation_median": 0.06740237801126314,
+      "projected_rotation_median": 95.8453125322404
+    }
+  },
+  "split_summary_usable": {
+    "test": {
+      "n": 106,
+      "cobb_median": 43.2469065972481,
+      "cobb_iqr": [
+        31.29527924262472,
+        55.44592858347088
+      ],
+      "max_chord_deviation_median": 0.08245263531633121,
+      "projected_rotation_median": 100.29235326895835
+    },
+    "train": {
+      "n": 428,
+      "cobb_median": 40.00043768628272,
+      "cobb_iqr": [
+        28.727133227847162,
+        53.31662686527266
+      ],
+      "max_chord_deviation_median": 0.07176493589207095,
+      "projected_rotation_median": 92.95948674825007
+    }
+  },
+  "quality_sensitivity": {
+    "good_n": 363,
+    "non_good_n": 171,
+    "good_median": 41.64629693467042,
+    "non_good_median": 37.86852988464885,
+    "mann_whitney_u": 35318.0,
+    "mann_whitney_p": 0.010070423449920419
+  },
+  "outlier_review": {
+    "method": "largest absolute residuals from linear fit of normalized chord deviation on Cobb-like endplate envelope",
+    "n_cases": 20,
+    "csv": "/home/sayuj/jupyterlab/scoliosis/results/open_data/spineweb_geometry_validation_outliers.csv"
+  },
+  "limitations": [
+    "No image pixels are required for this analysis.",
+    "Cobb-like values are derived from landmarks, not independent clinician measurements.",
+    "Projected rotation and curvature metrics are 2D AP-projection proxies, not true 3D axial rotation.",
+    "No growth stage, bracing exposure, or longitudinal progression endpoint is available in this open package."
+  ]
+}

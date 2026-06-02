@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- date: 21-Jun-2019 11:09:42, user: N/A-->
+<existingAnnotations>
+	<exam SOPInstanceUID="1.3.6.1.4.1.9590.100.1.2.187680007012637650506737686372604668564" inputFile="sunhl-1th-01-Mar-2017-310 C AP.jpg">
+		<annotation id="T1">
+			<pos>501.00 187.00 657.00 189.00 650.00 253.00 504.00 238.00 </pos>
+		</annotation>
+		<annotation id="T2">
+			<pos>498.00 267.00 646.00 281.00 635.00 340.00 491.00 331.00 </pos>
+		</annotation>
+		<annotation id="T3">
+			<pos>489.00 357.00 632.00 382.00 614.00 445.00 482.00 409.00 </pos>
+		</annotation>
+		<annotation id="T4">
+			<pos>476.00 445.00 599.00 486.00 576.00 562.00 463.00 527.00 </pos>
+		</annotation>
+		<annotation id="T5">
+			<pos>442.00 559.00 558.00 601.00 516.00 692.00 398.00 653.00 </pos>
+		</annotation>
+		<annotation id="T6">
+			<pos>377.00 689.00 504.00 722.00 454.00 819.00 324.00 778.00 </pos>
+		</annotation>
+		<annotation id="T7">
+			<pos>324.00 810.00 443.00 843.00 428.00 928.00 292.00 915.00 </pos>
+		</annotation>
+		<annotation id="T8">
+			<pos>290.00 948.00 425.00 954.00 432.00 1045.00 295.00 1065.00 </pos>
+		</annotation>
+		<annotation id="T9">
+			<pos>304.00 1099.00 440.00 1074.00 473.00 1152.00 326.00 1207.00 </pos>
+		</annotation>
+		<annotation id="T10">
+			<pos>345.00 1246.00 492.00 1187.00 550.00 1277.00 394.00 1355.00 </pos>
+		</annotation>
+		<annotation id="T11">
+			<pos>427.00 1384.00 575.00 1307.00 651.00 1414.00 471.00 1480.00 </pos>
+		</annotation>
+		<annotation id="T12">
+			<pos>501.00 1531.00 666.00 1448.00 709.00 1542.00 541.00 1608.00 </pos>
+		</annotation>
+		<annotation id="L1">
+			<pos>545.00 1646.00 724.00 1598.00 764.00 1707.00 600.00 1742.00 </pos>
+		</annotation>
+		<annotation id="L2">
+			<pos>599.00 1781.00 777.00 1760.00 781.00 1884.00 595.00 1866.00 </pos>
+		</annotation>
+		<annotation id="L3">
+			<pos>596.00 1903.00 782.00 1927.00 756.00 2032.00 584.00 1993.00 </pos>
+		</annotation>
+		<annotation id="L4">
+			<pos>550.00 2052.00 735.00 2112.00 687.00 2244.00 487.00 2191.00 </pos>
+		</annotation>
+		<annotation id="L5">
+			<pos>444.00 2251.00 671.00 2291.00 656.00 2367.00 435.00 2358.00 </pos>
+		</annotation>
+	</exam>
+</existingAnnotations>
