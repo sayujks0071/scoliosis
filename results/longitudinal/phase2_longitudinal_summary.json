@@ -1,0 +1,181 @@
+{
+  "baseline_cobb_median": 16.5255,
+  "best_binary_models": [
+    {
+      "auroc": 0.9948387096774194,
+      "average_precision": 0.885,
+      "brier_score": 0.012593660628235515,
+      "calibration": [
+        {
+          "bin": "0.0-0.2",
+          "mean_prediction": 0.0129250929546749,
+          "n": 154,
+          "observed_rate": 0.006493506493506494
+        },
+        {
+          "bin": "0.2-0.4",
+          "mean_prediction": 0.3779038361390135,
+          "n": 2,
+          "observed_rate": 0.5
+        },
+        {
+          "bin": "0.4-0.6",
+          "mean_prediction": 0.5134235652113331,
+          "n": 3,
+          "observed_rate": 0.6666666666666666
+        },
+        {
+          "bin": "0.6-0.8",
+          "mean_prediction": 0.7771424687548913,
+          "n": 1,
+          "observed_rate": 1.0
+        }
+      ],
+      "evaluation": "stratified_5fold_cv",
+      "mae": null,
+      "model": "combined_theory",
+      "n": 160,
+      "positives": 5.0,
+      "predictors": "baseline_cobb_angle_deg,baseline_age_years,baseline_risser_stage,sex_female,baseline_tortuosity,baseline_lateral_span_norm,baseline_max_chord_deviation_norm,baseline_projected_rotation_total_deg,baseline_projected_curvature_energy,baseline_cobb_endplate_envelope_deg",
+      "prevalence": 0.03125,
+      "r2": null,
+      "rmse": null,
+      "target": "crossed_40deg",
+      "task": "binary"
+    },
+    {
+      "auroc": 0.7899347029781812,
+      "average_precision": 0.8254934157232079,
+      "brier_score": 0.18522748302361675,
+      "calibration": [
+        {
+          "bin": "0.0-0.2",
+          "mean_prediction": 0.1285458140066729,
+          "n": 15,
+          "observed_rate": 0.2
+        },
+        {
+          "bin": "0.2-0.4",
+          "mean_prediction": 0.2945352935529987,
+          "n": 30,
+          "observed_rate": 0.26666666666666666
+        },
+        {
+          "bin": "0.4-0.6",
+          "mean_prediction": 0.49730259890404044,
+          "n": 43,
+          "observed_rate": 0.5348837209302325
+        },
+        {
+          "bin": "0.6-0.8",
+          "mean_prediction": 0.7126189487150316,
+          "n": 31,
+          "observed_rate": 0.6774193548387096
+        },
+        {
+          "bin": "0.8-1.0",
+          "mean_prediction": 0.9012467980871814,
+          "n": 41,
+          "observed_rate": 0.8780487804878049
+        }
+      ],
+      "evaluation": "stratified_5fold_cv",
+      "mae": null,
+      "model": "geometry_only",
+      "n": 160,
+      "positives": 91.0,
+      "predictors": "baseline_tortuosity,baseline_lateral_span_norm,baseline_max_chord_deviation_norm,baseline_projected_rotation_total_deg,baseline_projected_curvature_energy,baseline_cobb_endplate_envelope_deg",
+      "prevalence": 0.56875,
+      "r2": null,
+      "rmse": null,
+      "target": "progressed_5deg",
+      "task": "binary"
+    },
+    {
+      "auroc": 0.7871875,
+      "average_precision": 0.7949427467295498,
+      "brier_score": 0.18915718203939397,
+      "calibration": [
+        {
+          "bin": "0.0-0.2",
+          "mean_prediction": 0.12280098996995996,
+          "n": 20,
+          "observed_rate": 0.2
+        },
+        {
+          "bin": "0.2-0.4",
+          "mean_prediction": 0.29273009240314135,
+          "n": 43,
+          "observed_rate": 0.27906976744186046
+        },
+        {
+          "bin": "0.4-0.6",
+          "mean_prediction": 0.48533000443295415,
+          "n": 37,
+          "observed_rate": 0.4864864864864865
+        },
+        {
+          "bin": "0.6-0.8",
+          "mean_prediction": 0.7180834944155622,
+          "n": 37,
+          "observed_rate": 0.7027027027027027
+        },
+        {
+          "bin": "0.8-1.0",
+          "mean_prediction": 0.892699308792395,
+          "n": 23,
+          "observed_rate": 0.8695652173913043
+        }
+      ],
+      "evaluation": "stratified_5fold_cv",
+      "mae": null,
+      "model": "geometry_only",
+      "n": 160,
+      "positives": 80.0,
+      "predictors": "baseline_tortuosity,baseline_lateral_span_norm,baseline_max_chord_deviation_norm,baseline_projected_rotation_total_deg,baseline_projected_curvature_energy,baseline_cobb_endplate_envelope_deg",
+      "prevalence": 0.5,
+      "r2": null,
+      "rmse": null,
+      "target": "progressed_6deg",
+      "task": "binary"
+    }
+  ],
+  "best_regression_model": {
+    "auroc": null,
+    "average_precision": null,
+    "brier_score": null,
+    "calibration": null,
+    "evaluation": "5fold_cv",
+    "mae": 1.6672773659627989,
+    "model": "combined_theory",
+    "n": 160,
+    "positives": null,
+    "predictors": "baseline_cobb_angle_deg,baseline_age_years,baseline_risser_stage,sex_female,baseline_tortuosity,baseline_lateral_span_norm,baseline_max_chord_deviation_norm,baseline_projected_rotation_total_deg,baseline_projected_curvature_energy,baseline_cobb_endplate_envelope_deg",
+    "prevalence": null,
+    "r2": 0.4442114119462237,
+    "rmse": 2.087403580648208,
+    "target": "annualized_cobb_change_deg",
+    "task": "regression"
+  },
+  "dataset_kind": "synthetic_demo",
+  "delta_cobb_median": 6.0425,
+  "followup_years_median": 1.5331964407939767,
+  "limitations": [
+    "Synthetic demo data verifies software wiring only and is not evidence for the biological theory.",
+    "Real patient-level longitudinal validation requires dated visits with growth or maturity covariates.",
+    "Ingested radiograph-only resources need identity-preserving visit linkage before progression testing."
+  ],
+  "n_patients": 160,
+  "n_trajectories": 160,
+  "n_visits": 320,
+  "phase": "phase2_longitudinal_progression",
+  "progression_counts": {
+    "crossed_40deg": 5,
+    "crossed_50deg": 1,
+    "progressed_5deg": 91,
+    "progressed_6deg": 80
+  },
+  "source_datasets": [
+    "synthetic_phase2_demo"
+  ]
+}

@@ -3,10 +3,14 @@ from pathlib import Path
 
 import pytest
 
-# Add repo root to sys.path
+# Add repo root and src to sys.path
 root_dir = Path(__file__).resolve().parent
 if str(root_dir) not in sys.path:
     sys.path.insert(0, str(root_dir))
+
+src_dir = root_dir / "src"
+if str(src_dir) not in sys.path:
+    sys.path.insert(0, str(src_dir))
 
 # Add scripts directory to sys.path
 scripts_dir = root_dir / "scripts"
