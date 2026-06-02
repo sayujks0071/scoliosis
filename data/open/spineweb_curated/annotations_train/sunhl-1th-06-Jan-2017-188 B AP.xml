@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- date: 04-Jul-2019 09:04:33, user: Xmod-->
+<existingAnnotations>
+	<exam SOPInstanceUID="1.3.6.1.4.1.9590.100.1.2.314278405012736415103647333480098754230" inputFile="sunhl-1th-06-Jan-2017-188 B AP.jpg">
+		<annotation id="T1">
+			<pos>490.00 143.00 656.00 144.00 647.00 196.00 476.00 195.00 </pos>
+		</annotation>
+		<annotation id="T2">
+			<pos>473.00 221.00 638.00 247.00 624.00 299.00 462.00 262.00 </pos>
+		</annotation>
+		<annotation id="T3">
+			<pos>438.00 274.00 588.00 331.00 482.00 353.00 385.00 289.00 </pos>
+		</annotation>
+		<annotation id="T4">
+			<pos>316.00 301.00 408.00 388.00 346.00 405.00 248.00 312.00 </pos>
+		</annotation>
+		<annotation id="T5">
+			<pos>205.00 357.00 329.00 426.00 306.00 463.00 155.00 430.00 </pos>
+		</annotation>
+		<annotation id="T6">
+			<pos>141.00 467.00 294.00 479.00 285.00 519.00 131.00 536.00 </pos>
+		</annotation>
+		<annotation id="T10">
+			<pos>149.00 554.00 285.00 528.00 303.00 573.00 163.00 619.00 </pos>
+		</annotation>
+		<annotation id="T11">
+			<pos>167.00 634.00 312.00 586.00 342.00 648.00 184.00 709.00 </pos>
+		</annotation>
+		<annotation id="T12">
+			<pos>208.00 722.00 350.00 661.00 392.00 730.00 252.00 800.00 </pos>
+		</annotation>
+		<annotation id="L1">
+			<pos>279.00 819.00 407.00 745.00 447.00 822.00 325.00 891.00 </pos>
+		</annotation>
+		<annotation id="L2">
+			<pos>324.00 920.00 471.00 848.00 508.00 934.00 360.00 996.00 </pos>
+		</annotation>
+		<annotation id="L3">
+			<pos>371.00 1024.00 528.00 973.00 569.00 1074.00 401.00 1114.00 </pos>
+		</annotation>
+		<annotation id="L4">
+			<pos>398.00 1155.00 577.00 1119.00 606.00 1226.00 421.00 1255.00 </pos>
+		</annotation>
+		<annotation id="L5">
+			<pos>403.00 1276.00 607.00 1252.00 623.00 1368.00 405.00 1387.00 </pos>
+		</annotation>
+	</exam>
+</existingAnnotations>
